@@ -8,7 +8,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
@@ -20,10 +20,12 @@ public class ProductControllerTest {
 
     @Test
     public void testHello() throws Exception {
-        String hello = "hello testing";
+        String hello = "Hello World";
 
-        mvc.perform(get("/hello"))
-                .andExpect((status().isOk()))
-                .andDo(print());
+        mvc.perform(get("/hello")) // '/hello' url 호출
+                .andExpect((status().isOk())) // HTTP 상태가 200인지 테스트
+                .andExpect(content().string(hello)); //response body에 해당 string이 있는지 테스트
+               // .andDo(print());
     }
+
 }

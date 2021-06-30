@@ -1,5 +1,6 @@
 package com.example.vending.product;
 
+import com.example.vending.controller.ProductController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

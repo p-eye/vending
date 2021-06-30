@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class ProductController {
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     public String home(Model model) {
         model.addAttribute("message", "this is coffee");
         return "index.html";

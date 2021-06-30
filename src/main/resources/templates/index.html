@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <h1>this is index page</h1>
-
-    <h2 th:text="${message}"></h2>
-
+<p th:text="'안녕asdfasfasdfasfsafdasdfdasfd하세요. ' + ${message}" >안녕하세요. 손님</p>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.example.vending.controller;
 
 import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
+import com.example.vending.helper.CommonHelper;
 import com.example.vending.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -43,20 +44,8 @@ public class ProductController {
 
     @PostMapping("/product/create/file")
     public String saveFile(MultipartFile file) {
-        Product product = new Product(null, "test", "tilte", "content");
-        Product product2 = new Product(null, "asdf","asdf",",asdf");
-        List<Product> products = new ArrayList<Product>();
-        products.add(product);
-        products.add(product2);
-        productService.saveAll(products);
-        /*
         List<Product> products = CommonHelper.openFile(file);
-*/
-        /*
-        if (ExcelHelper.isExcelFormat(file)) {
-            ExcelHelper.openFile(file);
-        }
-        */
+        //productService.saveAll(products);
         return "redirect:/product/new";
     }
 

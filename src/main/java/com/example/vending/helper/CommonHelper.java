@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public abstract class CommonHelper {
+public class CommonHelper {
 
     private static String EXCEL = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     private static String TXT = "text/plain";

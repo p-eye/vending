@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -45,6 +44,7 @@ public class ProductController {
     @PostMapping("/product/create/file")
     public String saveFile(MultipartFile file) {
         List<Product> products = CommonHelper.fileToProducts(file);
+        System.out.println(products);
         //productService.saveAll(products);
         return "redirect:/product/new";
     }

@@ -19,6 +19,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
     compileOnly 'org.projectlombok:lombok'
+    compileOnly group: 'org.apache.poi', name: 'poi', version: '3.13'
+
     runtimeOnly 'com.h2database:h2'
 
     annotationProcessor 'org.projectlombok:lombok'

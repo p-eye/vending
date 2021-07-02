@@ -20,6 +20,7 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok'
     compileOnly group: 'org.apache.poi', name: 'poi', version: '3.13'
+    compileOnly group: 'commons-io', name: 'commons-io', version: '2.4'
 
     runtimeOnly 'com.h2database:h2'
 

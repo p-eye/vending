@@ -27,12 +27,12 @@ public class ProductController {
 
     @PostMapping("/product/create")
     public String createProduct(ProductForm form) {
-        // 1. DTO를 Entity로 변환
+        // 1. DTO로 받아와서 Entity로 변환
         Product product = form.toEntity();
 
         // 2. Reposityroy에게 Entity를 DB에 저장하게 함
-        Product saved = productRepository.save(product);
-        return "product/new";
+        productRepository.save(product);
+        return "redirect:/product/new";
     }
 
 }

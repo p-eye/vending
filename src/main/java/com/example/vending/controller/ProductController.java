@@ -44,7 +44,7 @@ public class ProductController {
 
     @PostMapping("/product/create/file")
     public String saveFile(MultipartFile file) {
-        List<Product> products = CommonHelper.openFile(file);
+        List<Product> products = CommonHelper.fileToProducts(file);
         //productService.saveAll(products);
         return "redirect:/product/new";
     }

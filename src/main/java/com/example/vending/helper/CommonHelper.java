@@ -5,7 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-public class CommonHelper {
+public abstract class CommonHelper {
 
     private static String EXCEL = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     private static String TXT = "text/plain";
@@ -23,13 +23,14 @@ public class CommonHelper {
         return -1;
     }
 
-    public static List<Product> openFile(MultipartFile file) {
+    public static List<Product> fileToProducts(MultipartFile file)
+    {
         int typeIdx = getFileType(file);
+
         if (typeIdx == EXCEL_IDX)
             return ExcelHelper.openFile(file);
         if (typeIdx == TXT_IDX)
             return TxtHelper.openFile(file);
-
         return null;
     }
 }

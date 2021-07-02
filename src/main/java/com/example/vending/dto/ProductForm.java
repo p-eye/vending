@@ -6,9 +6,11 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class ProductForm {
 
+    private String name;
     private String title;
+    private String content;
 
     public Product toEntity() {
-        return new Product(null, title);
+        return new Product(null, name, title, content);
     }
 }

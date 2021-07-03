@@ -7,6 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
+import static org.apache.poi.ss.usermodel.CellType.STRING;
+
 public class ExcelHelper extends CommonHelper {
 
     private static int columnCnt = 3;
@@ -14,7 +17,8 @@ public class ExcelHelper extends CommonHelper {
 
     protected static List<Product> openFile(MultipartFile file) {
 
-        try (Workbook workbook = WorkbookFactory.create(file.getInputStream())) {
+        try {
+            Workbook workbook = WorkbookFactory.create(file.getInputStream());
             Sheet sheet = workbook.getSheet("product");
             if (sheet == null)
                 throw new IllegalAccessException("해당 시트가 존재하지 않습니다");
@@ -29,6 +33,8 @@ public class ExcelHelper extends CommonHelper {
         try {
             if (!isTable(sheet) || !isTableHeader(sheet))
                 throw new IllegalAccessException("테이블이 올바르지 않습니다");
+            if (!isValidCellType(sheet))
+                throw new IllegalAccessException("데이터 형식이 올바르지 않습니다");
             return rowsToProducts(sheet);
         } catch (Exception e) {
             System.out.println(e);
@@ -76,12 +82,24 @@ public class ExcelHelper extends CommonHelper {
         return true;
     }
 
+    private static boolean isValidCellType(Sheet sheet) {
+
+        for (int i = rowStart; i < sheet.getLastRowNum(); i++) {
+            Row row = sheet.getRow(i);
+            if (row.getCell(0).getCellType() != STRING
+                || row.getCell(1).getCellType() != STRING
+                || row.getCell(2).getCellType() != STRING) {
+                System.out.println("row num : " + i + ", Invalid CellType");
+                return false;
+            }
+        }
+       return true;
+    }
     private static List<Product> rowsToProducts(Sheet sheet) {
 
         List<Product> products = new ArrayList<>();
-        String name, title, content;
 
-        for (int i = rowStart; i < sheet.getLastRowNum(); i++) {
+        for (int i = rowStart; i <= sheet.getLastRowNum(); i++) {
             Row row = sheet.getRow(i);
             Product product = new Product(null,
                     row.getCell(0).getStringCellValue(),

@@ -84,7 +84,7 @@ public class ExcelHelper extends CommonHelper {
 
     private static boolean isValidCellType(Sheet sheet) {
 
-        for (int i = rowStart; i < sheet.getLastRowNum(); i++) {
+        for (int i = rowStart; i <= sheet.getLastRowNum(); i++) {
             Row row = sheet.getRow(i);
             if (row.getCell(0).getCellType() != STRING
                 || row.getCell(1).getCellType() != STRING

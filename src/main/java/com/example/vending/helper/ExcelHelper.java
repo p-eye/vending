@@ -7,7 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.apache.poi.ss.usermodel.CellType.NUMERIC;
 import static org.apache.poi.ss.usermodel.CellType.STRING;
 
 public class ExcelHelper extends CommonHelper {
@@ -17,8 +16,7 @@ public class ExcelHelper extends CommonHelper {
 
     protected static List<Product> openFile(MultipartFile file) {
 
-        try {
-            Workbook workbook = WorkbookFactory.create(file.getInputStream());
+        try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){
             Sheet sheet = workbook.getSheet("product");
             if (sheet == null)
                 throw new IllegalAccessException("해당 시트가 존재하지 않습니다");

@@ -5,10 +5,12 @@ import org.apache.poi.ss.usermodel.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ExcelHelper extends CommonHelper {
+
+    private static int columnCnt = 3;
+    private static int rowStart = 1;
 
     protected static List<Product> openFile(MultipartFile file) {
 
@@ -47,7 +49,7 @@ public class ExcelHelper extends CommonHelper {
 
             int firstCellNum = row.getFirstCellNum();
             int lastCellNum = row.getLastCellNum();
-            if (firstCellNum != 0 || lastCellNum != 3)
+            if (firstCellNum != 0 || lastCellNum != columnCnt)
                 return false;
 
             for (int c = firstCellNum; c < lastCellNum; c++) {
@@ -78,25 +80,15 @@ public class ExcelHelper extends CommonHelper {
 
         List<Product> products = new ArrayList<>();
         String name, title, content;
-        int rowNum = 0;
-        Iterator<Row> rows = sheet.iterator();
-        while (rows.hasNext()) {
-            Row currentRow = rows.next();
-            System.out.println(currentRow.getRowNum());
-            /*
-            Row currentRow = rows.next();
 
-            Iterator<Cell> cells = currentRow.iterator();
-            while (cells.hasNext())
-            {
-                Cell currentCell = cells.next();
-                currentCell.get
-            }
-            Product product = new Product();
-            */
-
+        for (int i = rowStart; i < sheet.getLastRowNum(); i++) {
+            Row row = sheet.getRow(i);
+            Product product = new Product(null,
+                    row.getCell(0).getStringCellValue(),
+                    row.getCell(1).getStringCellValue(),
+                    row.getCell(2).getStringCellValue());
+            products.add(product);
         }
-        return null;
+        return products;
     }
-
 }

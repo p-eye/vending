@@ -11,6 +11,7 @@ public class CommonHelper {
     private static String TXT = "text/plain";
     private static int EXCEL_IDX = Format.EXCEL.ordinal();
     private static int TXT_IDX = Format.TXT.ordinal();
+    protected static int columnCnt = 3;
 
     private static int getFileType(MultipartFile file) {
 

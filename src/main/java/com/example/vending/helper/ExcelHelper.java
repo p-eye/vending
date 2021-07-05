@@ -11,7 +11,6 @@ import static org.apache.poi.ss.usermodel.CellType.STRING;
 
 public class ExcelHelper extends CommonHelper {
 
-    private static int columnCnt = 3;
     private static int rowStart = 1;
 
     protected static List<Product> openFile(MultipartFile file) {
@@ -31,7 +30,7 @@ public class ExcelHelper extends CommonHelper {
         try {
             if (!isTable(sheet) || !isTableHeader(sheet))
                 throw new IllegalAccessException("테이블이 올바르지 않습니다");
-            if (!isValidCellType(sheet))
+            if (!isValidElemType(sheet))
                 throw new IllegalAccessException("데이터 형식이 올바르지 않습니다");
             return rowsToProducts(sheet);
         } catch (Exception e) {
@@ -80,7 +79,7 @@ public class ExcelHelper extends CommonHelper {
         return true;
     }
 
-    private static boolean isValidCellType(Sheet sheet) {
+    private static boolean isValidElemType(Sheet sheet) {
 
         for (int i = rowStart; i <= sheet.getLastRowNum(); i++) {
             Row row = sheet.getRow(i);

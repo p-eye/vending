@@ -13,26 +13,26 @@ public class ExcelHelper extends CommonHelper {
 
     private static int rowStart = 1;
 
-    protected static List<Product> openFile(MultipartFile file) {
+    protected static List<String[]> openFile(MultipartFile file) {
 
         try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){
             Sheet sheet = workbook.getSheet("product");
             if (sheet == null)
                 throw new IllegalAccessException("해당 시트가 존재하지 않습니다");
-            return sheetToProducts(sheet);
+            return sheetToTable(sheet);
         } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
 
-    private static List<Product> sheetToProducts(Sheet sheet) {
+    private static List<String[]> sheetToTable(Sheet sheet) {
         try {
             if (!isTable(sheet) || !isTableHeader(sheet))
                 throw new IllegalAccessException("테이블이 올바르지 않습니다");
             if (!isValidElemType(sheet))
                 throw new IllegalAccessException("데이터 형식이 올바르지 않습니다");
-            return rowsToProducts(sheet);
+            return rowsToList(sheet);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -92,18 +92,20 @@ public class ExcelHelper extends CommonHelper {
         }
        return true;
     }
-    private static List<Product> rowsToProducts(Sheet sheet) {
 
-        List<Product> products = new ArrayList<>();
+    private static List<String[]> rowsToList(Sheet sheet) {
+
+        List<String[]> table = new ArrayList<>();
 
         for (int i = rowStart; i <= sheet.getLastRowNum(); i++) {
             Row row = sheet.getRow(i);
-            Product product = new Product(null,
-                    row.getCell(0).getStringCellValue(),
-                    row.getCell(1).getStringCellValue(),
-                    row.getCell(2).getStringCellValue());
-            products.add(product);
+            String[] str = new String[3];
+
+            str[0] = row.getCell(0).getStringCellValue();
+            str[1] = row.getCell(1).getStringCellValue();
+            str[2] = row.getCell(2).getStringCellValue();
+            table.add(str);
         }
-        return products;
+        return table;
     }
 }

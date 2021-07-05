@@ -27,16 +27,24 @@ public class CommonHelper {
 
     public static List<Product> fileToProducts(MultipartFile file)
     {
+        List<String[]> table;
         int typeIdx = getFileType(file);
 
         if (typeIdx == EXCEL_IDX)
-            return ExcelHelper.openFile(file);
+            table = ExcelHelper.openFile(file);
+        else
+            table=  null;
+        /*
         if (typeIdx == TXT_IDX)
-            return TxtHelper.openFile(file);
-        return null;
+            table =  TxtHelper.openFile(file);
+
+         */
+        return tableToProducts(table);
     }
 
-    public static List<Product> tableToProducts(List<String[]> table) {
+    private static List<Product> tableToProducts(List<String[]> table) {
+        if (table == null)
+            return null;
         List<Product> products = new ArrayList<>();
         for (String[] str : table) {
             Product product= new Product(null, str[0], str[1], str[2]);

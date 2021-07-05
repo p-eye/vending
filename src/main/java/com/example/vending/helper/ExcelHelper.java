@@ -8,8 +8,6 @@ import java.util.List;
 
 public class ExcelHelper extends CommonHelper {
 
-    private static int rowStart = 1;
-
     protected static List<String[]> openFile(MultipartFile file) {
 
         try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){

@@ -1,6 +1,5 @@
 package com.example.vending.helper;
 
-import com.example.vending.entity.Product;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;

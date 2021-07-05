@@ -27,7 +27,7 @@ public class ExcelHelper extends CommonHelper {
         try {
             if (!isTable(sheet))
                 throw new IllegalAccessException("테이블이 올바르지 않습니다");
-            return rowsToList(sheet);
+            return rowsToTable(sheet);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -59,7 +59,7 @@ public class ExcelHelper extends CommonHelper {
         return true;
     }
 
-    private static List<String[]> rowsToList(Sheet sheet) {
+    private static List<String[]> rowsToTable(Sheet sheet) {
 
         List<String[]> table = new ArrayList<>();
 

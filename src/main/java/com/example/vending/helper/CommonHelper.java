@@ -6,6 +6,10 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.ArrayList;
 import java.util.List;
 
+enum Format {
+    EXCEL, TXT
+}
+
 public class CommonHelper {
 
     private static String EXCEL = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -27,29 +31,50 @@ public class CommonHelper {
 
     public static List<Product> fileToProducts(MultipartFile file)
     {
-        List<String[]> table;
+        List<String[]> table = null;
         int typeIdx = getFileType(file);
 
         if (typeIdx == EXCEL_IDX)
             table = ExcelHelper.openFile(file);
-        else
-            table=  null;
-        /*
-        if (typeIdx == TXT_IDX)
-            table =  TxtHelper.openFile(file);
-
-         */
+        else if (typeIdx == TXT_IDX)
+            table = TxtHelper.openFile(file);
         return tableToProducts(table);
     }
 
     private static List<Product> tableToProducts(List<String[]> table) {
         if (table == null)
             return null;
+        if (!isValidHeader(table.get(0)) || !isValidData(table))
+            return null;
+
         List<Product> products = new ArrayList<>();
-        for (String[] str : table) {
+        table.stream().skip(1).forEach(str -> {
             Product product= new Product(null, str[0], str[1], str[2]);
             products.add(product);
-        }
+        });
         return products;
     }
+
+    private static boolean isValidHeader(String[] header) {
+
+        if (header[0] == null || header[1] == null || header[2] == null
+                || !"name".equals(header[0])
+                || !"title".equals(header[1])
+                || !"content".equals(header[2]))
+            return false;
+        return true;
+    }
+
+    private static boolean isValidData(List<String[]> table) {
+
+        table.stream().skip(1).forEach(str -> {
+            // 데이터타입이 전부 str인지
+            String data0 = str[0];
+            String data1 = str[1];
+            String data2 = str[2];
+        });
+
+        return true;
+    }
+
 }

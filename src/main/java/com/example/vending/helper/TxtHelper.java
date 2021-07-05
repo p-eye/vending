@@ -11,10 +11,10 @@ import java.util.List;
 
 public class TxtHelper extends CommonHelper {
 
-    protected static List<Product> openFile(MultipartFile file) {
+    protected static List<String[]> openFile(MultipartFile file) {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(file.getInputStream()));
-            return textToProducts(br);
+            return null;//textToProducts(br);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }

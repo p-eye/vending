@@ -3,6 +3,7 @@ package com.example.vending.helper;
 import com.example.vending.entity.Product;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommonHelper {
@@ -33,5 +34,14 @@ public class CommonHelper {
         if (typeIdx == TXT_IDX)
             return TxtHelper.openFile(file);
         return null;
+    }
+
+    public static List<Product> tableToProducts(List<String[]> table) {
+        List<Product> products = new ArrayList<>();
+        for (String[] str : table) {
+            Product product= new Product(null, str[0], str[1], str[2]);
+            products.add(product);
+        }
+        return products;
     }
 }

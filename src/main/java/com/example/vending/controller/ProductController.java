@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.net.URL;
+
 @Controller
 @AllArgsConstructor
 public class ProductController {
@@ -43,6 +45,12 @@ public class ProductController {
     @PostMapping("/product/create/file")
     public String saveFileToDB(MultipartFile file) {
         fileService.saveToDb(file);
+        return "redirect:/product/new";
+    }
+
+    @PostMapping("/product/create/url")
+    public String saveUrlToDB(URL url) {
+        System.out.println(url);
         return "redirect:/product/new";
     }
 

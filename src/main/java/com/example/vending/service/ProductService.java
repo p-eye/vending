@@ -1,5 +1,6 @@
 package com.example.vending.service;
 
+import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.repository.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ public class ProductService {
         productRepository.saveAll(products);
     }
 
-    public void save(Product product) {
-        productRepository.save(product);
+    public void saveToDb(ProductForm form) {
+        productRepository.save(form.toEntity());
     }
 }

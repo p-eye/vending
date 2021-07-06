@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TxtHelper extends CommonHelper {
+public class TxtHelper extends FileHelper {
 
     private static void readLines(BufferedReader br, List<String> rows) {
         try {

@@ -4,6 +4,7 @@ import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.service.FileService;
 import com.example.vending.service.ProductService;
+import com.example.vending.service.UrlService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +21,7 @@ public class ProductController {
 
     private ProductService productService;
     private FileService fileService;
+    private UrlService urlService;
 
     @RequestMapping("/") // url 요청연결
     public String hello(Model model) {
@@ -32,25 +34,21 @@ public class ProductController {
         return "product/new";
     }
 
-    @PostMapping("/product/create")
-    public String saveForm(ProductForm form) {
-        // 1. DTO로 받아와서 Entity로 변환
-        Product product = form.toEntity();
-
-        // 2. Reposityroy에게 Entity를 DB에 저장하게 함
-        productService.save(product);
+    @PostMapping("/product/save/form")
+    public String saveFormToDb(ProductForm form) {
+        productService.saveToDb(form);
         return "redirect:/product/new";
     }
 
-    @PostMapping("/product/create/file")
-    public String saveFileToDB(MultipartFile file) {
+    @PostMapping("/product/save/file")
+    public String saveFileToDb(MultipartFile file) {
         fileService.saveToDb(file);
         return "redirect:/product/new";
     }
 
-    @PostMapping("/product/create/url")
-    public String saveUrlToDB(URL url) {
-        System.out.println(url);
+    @PostMapping("/product/save/url")
+    public String saveUrlToDb(URL url) {
+        urlService.saveToDb(url);
         return "redirect:/product/new";
     }
 

@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExcelHelper extends CommonHelper {
+public class ExcelHelper extends FileHelper {
 
     protected static List<String[]> openFile(MultipartFile file) {
 

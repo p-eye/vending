@@ -7,7 +7,7 @@
     <title>Hello, world!</title>
 </head>
 <body>
-    <form class="container" action="/product/create" method="post">
+    <form class="container" action="/product/save/form" method="post">
         <div class="row n">
             <div class="col mb-3">
                 <label class="form-label">이름</label>
@@ -25,7 +25,7 @@
         <button type="submit" class="btn btn-primary mb-3">제출</button>
     </form>
 
-    <form class="container" action="/product/create/file" method="post" enctype="multipart/form-data">
+    <form class="container" action="/product/save/file" method="post" enctype="multipart/form-data">
         <div class="col mb-3">
             <label class="form-label">EXCEL, TEXT</label>
             <input type="file" class="form-control" name="file">
@@ -33,10 +33,10 @@
         <button type="submit" class="btn btn-primary mb-3">제출</button>
     </form>
 
-    <form class="container" action="/product/create/url" method="post" enctype="multipart/form-data">
+    <form class="container" action="/product/save/url" method="post" enctype="multipart/form-data">
         <div class="col mb-3">
             <label class="form-label">URL</label>
-            <input type="url" class="form-control" name="url" placeholder="https://product.com/create?name=ex&title=ex&content=ex">
+            <input type="url" class="form-control" name="url" placeholder="http://product.com/create?name=ex&title=ex&content=ex">
         </div>
         <button type="submit" class="btn btn-primary mb-3">제출</button>
     </form>

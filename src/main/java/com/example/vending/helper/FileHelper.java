@@ -10,7 +10,7 @@ enum Format {
     EXCEL, TXT
 }
 
-public class CommonHelper {
+public class FileHelper {
 
     private static String EXCEL = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     private static String TXT = "text/plain";

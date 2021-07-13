@@ -1,10 +1,7 @@
 package com.example.vending.controller;
 
 import com.example.vending.dto.ProductForm;
-import com.example.vending.entity.Product;
-import com.example.vending.service.FileService;
 import com.example.vending.service.ProductService;
-import com.example.vending.service.UrlService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +17,6 @@ import java.net.URL;
 public class ProductController {
 
     private ProductService productService;
-    private FileService fileService;
-    private UrlService urlService;
 
     @RequestMapping("/") // url 요청연결
     public String hello(Model model) {
@@ -35,20 +30,20 @@ public class ProductController {
     }
 
     @PostMapping("/product/save/form")
-    public String saveFormToDb(ProductForm form) {
+    public String saveToDb(ProductForm form) {
         productService.saveToDb(form);
         return "redirect:/product/new";
     }
 
     @PostMapping("/product/save/file")
-    public String saveFileToDb(MultipartFile file) {
-        fileService.saveToDb(file);
+    public String saveToDb(MultipartFile file) {
+        productService.saveToDb(file);
         return "redirect:/product/new";
     }
 
     @PostMapping("/product/save/url")
-    public String saveUrlToDb(URL url) {
-        urlService.saveToDb(url);
+    public String saveToDb(URL url) {
+        productService.saveToDb(url);
         return "redirect:/product/new";
     }
 

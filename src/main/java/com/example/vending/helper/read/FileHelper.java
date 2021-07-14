@@ -1,4 +1,4 @@
-package com.example.vending.helper;
+package com.example.vending.helper.read;
 
 import com.example.vending.entity.Product;
 import org.springframework.web.multipart.MultipartFile;

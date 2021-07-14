@@ -1,9 +1,6 @@
 package com.example.vending.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +9,7 @@ import javax.persistence.Id;
 @Entity // DB가 해당 객체를 인식 가능
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter @Setter
 public class Product {
 
     @Id @GeneratedValue

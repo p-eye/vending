@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 public class VendingApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(VendingApplication.class, args);
     }
 

@@ -4,8 +4,7 @@ import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.helper.read.FileHelper;
 import com.example.vending.helper.read.UrlHelper;
-import com.example.vending.helper.write.TxtHelper;
-import com.example.vending.repository.ProductRepository;
+import com.example.vending.repository.ProductRepository2;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ProductService {
 
-    private ProductRepository productRepository;
+    private ProductRepository2 productRepository;
 
     public void saveToDb(ProductForm form) {
         save(form.toEntity());
@@ -30,17 +29,15 @@ public class ProductService {
     public void saveToDb(URL url) {
         save(UrlHelper.urlToProduct(url));
     }
-    
+
     public void saveAll(List<Product> products){
         if (products != null)
             productRepository.saveAll(products);
-        TxtHelper.writeText(products);
     }
 
     public void save(Product product) {
         if (product != null)
             productRepository.save(product);
-        TxtHelper.writeText(product);
     }
 
 

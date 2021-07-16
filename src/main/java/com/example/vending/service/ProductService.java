@@ -7,6 +7,7 @@ import com.example.vending.helper.read.UrlHelper;
 import com.example.vending.repository.ProductRepository2;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.net.URL;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class ProductService {
 
     private ProductRepository2 productRepository;

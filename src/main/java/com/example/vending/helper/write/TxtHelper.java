@@ -11,9 +11,9 @@ import java.util.List;
 
 public class TxtHelper {
 
-    public static void writeText(List<Product> products) {
+    public static String writeText(List<Product> products) {
         String fileNameTimeStamped = createTimeStampedFileName();
-        File file = new File("/Users/p-eye/project/spring/vending/" + fileNameTimeStamped);
+        File file = new File("/Users/p-eye/project/spring/vending/src/main/resources/static/" + fileNameTimeStamped);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             String str = "name\ttitle\tcontent\n";
@@ -24,12 +24,14 @@ public class TxtHelper {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
+        return file.getName();
     }
 
-    public static void writeText(Product product) {
+    public static String writeText(Product product) {
         String fileNameTimeStamped = createTimeStampedFileName();
-        File file = new File("/Users/p-eye/project/spring/vending/" + fileNameTimeStamped);
+        File file = new File("/Users/p-eye/project/spring/vending/src/main/resources/static/" + fileNameTimeStamped);
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             String str = "name\ttitle\tcontent\n";
@@ -38,7 +40,9 @@ public class TxtHelper {
             writer.append(str);
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
+        return file.getName();
     }
 
     private static String createTimeStampedFileName() {

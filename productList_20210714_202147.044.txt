@@ -1,4 +1,0 @@
-name	title	content
-2	2	2
-ㄹ	ㄹ	ㄴ
-ㅇㄹ	ㅇㄴㄹ	ㅇㄹ

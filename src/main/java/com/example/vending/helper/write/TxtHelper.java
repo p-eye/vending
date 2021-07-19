@@ -1,6 +1,8 @@
 package com.example.vending.helper.write;
 
 import com.example.vending.entity.Product;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,13 +11,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+@Component
+@AllArgsConstructor
 public class TxtHelper {
 
-    public static String writeText(List<Product> products) {
+    public String writeText(List<Product> products) {
         String fileNameTimeStamped = createTimeStampedFileName();
         File file = new File("/Users/p-eye/project/spring/vending/src/main/resources/static/" + fileNameTimeStamped);
-
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            file.createNewFile();
             String str = "name\ttitle\tcontent\n";
             writer.append(str);
             for (Product product : products) {
@@ -29,7 +33,7 @@ public class TxtHelper {
         return file.getName();
     }
 
-    public static String writeText(Product product) {
+    public String writeText(Product product) {
         String fileNameTimeStamped = createTimeStampedFileName();
         File file = new File("/Users/p-eye/project/spring/vending/src/main/resources/static/" + fileNameTimeStamped);
 
@@ -45,7 +49,7 @@ public class TxtHelper {
         return file.getName();
     }
 
-    private static String createTimeStampedFileName() {
+    private String createTimeStampedFileName() {
         String fileName = "productList";
         String fileType = "txt";
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss.SSS").format(System.currentTimeMillis());

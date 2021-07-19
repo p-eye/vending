@@ -1,24 +1,22 @@
 package com.example.vending.helper.write;
 
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.stereotype.Component;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.IOException;
 
-@Component
+@Slf4j
 public class MailHelper {
 
     private JavaMailSender mailSender;
     private MimeMessage message;
     private MimeMessageHelper messageHelper;
 
-    private final String to = "standingtherain15@gmail.com";
+    private final String to = "forsendingmymail@gmail.com";
     private final String title = "[Springboot] Saved file list";
     private final String content = "this mail is sent automatically";
 
@@ -46,11 +44,8 @@ public class MailHelper {
     }
 
     // 첨부 파일
-    public void setAttach(String displayFileName, String pathToAttachment) throws MessagingException, IOException {
-        File file = new ClassPathResource(pathToAttachment).getFile();
-        FileSystemResource fsr = new FileSystemResource(file);
-
-        messageHelper.addAttachment(displayFileName, fsr);
+    public void setAttach(String displayFileName, String path) throws MessagingException, IOException {
+        messageHelper.addAttachment(displayFileName, new File(path));
     }
 
     // 발송
@@ -62,28 +57,26 @@ public class MailHelper {
         }
     }
 
-    public void sendMail(String fileName) {
+    public boolean sendMail(String fileName) {
         try {
-            message = mailSender.createMimeMessage();
-            messageHelper = new MimeMessageHelper(message, true, "UTF-8");
-
-
-            MailHelper mailHandler = new MailHelper(mailSender);
+            messageHelper = new MimeMessageHelper(mailSender.createMimeMessage(), true, "UTF-8");
+            MailHelper mailHelper = new MailHelper(mailSender);
 
             // 받는 사람
-            mailHandler.setTo(to);
+            mailHelper.setTo(to);
             // 제목
-            mailHandler.setSubject(title);
+            mailHelper.setSubject(title);
             // HTML Layout
             String htmlContent = "<p>" + content +"<p>";
-            mailHandler.setText(htmlContent, true);
+            mailHelper.setText(htmlContent, true);
             // 첨부 파일
-            mailHandler.setAttach(fileName, "static/"+fileName);
-
-            mailHandler.send();
+            mailHelper.setAttach(fileName, "/Users/p-eye/project/spring/vending/src/main/resources/static/"+ fileName);
+            mailHelper.send();
+            return true;
         }
         catch(Exception e){
             e.printStackTrace();
         }
+        return false;
     }
 }

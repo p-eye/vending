@@ -1,6 +1,8 @@
 package com.example.vending.controller;
 
 import com.example.vending.dto.ProductForm;
+import com.example.vending.entity.Product;
+import com.example.vending.exception.ApiRequestException;
 import com.example.vending.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.net.URL;
+import java.util.List;
 
 @Controller
 @AllArgsConstructor
@@ -45,6 +48,11 @@ public class ProductController {
     public String saveToDb(URL url) {
         productService.saveToDb(url);
         return "redirect:/product/new";
+    }
+
+    @GetMapping("students")
+    public List<Product> getAllProducts() {
+        throw new ApiRequestException("Oops cannot get all products with custom exception");
     }
 
 }

@@ -4,7 +4,7 @@ import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.helper.read.FileHelper;
 import com.example.vending.helper.read.UrlHelper;
-import com.example.vending.repository.ProductRepository2;
+import com.example.vending.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +18,7 @@ import java.util.List;
 @Transactional
 public class ProductService {
 
-    private ProductRepository2 productRepository;
+    private ProductRepository productRepository;
 
     public void saveToDb(ProductForm form) {
         save(form.toEntity());
@@ -34,12 +34,12 @@ public class ProductService {
 
     public void saveAll(List<Product> products){
         if (products != null)
-            productRepository.saveAll(products);
+            productRepository.saveToAll(products);
     }
 
     public void save(Product product) {
         if (product != null)
-            productRepository.save(product);
+            productRepository.saveToAll(product);
     }
 
 

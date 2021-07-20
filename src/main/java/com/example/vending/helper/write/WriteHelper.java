@@ -5,38 +5,31 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Slf4j
 @Component
 public class WriteHelper {
 
-    private JavaMailSender mailSender;
+    private TxtHelper txtHelper;
     private MailHelper mailHelper;
 
-    public WriteHelper(JavaMailSender mailSender) {
-        this.mailSender = mailSender;
+    public WriteHelper(JavaMailSender mailSender, TxtHelper txtHelper) {
+        this.txtHelper = txtHelper;
         this.mailHelper = new MailHelper(mailSender);
     }
 
-
     public boolean writeAll(Product product) {
-        TxtHelper txtHelper = new TxtHelper();
         String fileName = txtHelper.writeText(product);
         if (fileName == null)
             return false;
-        boolean isMailSent = sendMail(fileName);
-        return isMailSent;
+        return mailHelper.sendMail(fileName);
     }
 
-    public boolean sendMail(String fileName) {
-        boolean isMailSent = false;
-        try {
-            if (fileName != null) {
-                isMailSent = mailHelper.sendMail(fileName);
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
+    public boolean writeAll(List<Product> products) {
+        String fileName = txtHelper.writeText(products);
+        if (fileName == null)
             return false;
-        }
-        return isMailSent;
+        return mailHelper.sendMail(fileName);
     }
 }

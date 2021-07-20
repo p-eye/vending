@@ -31,16 +31,10 @@ public class ProductRepository {
 
     public List<Product> saveToAll(List<Product> products) {
         List<Product> ret = save(products);
-        /*
-        String fileName = writeText(products);
-        if (fileName == null)
+        if (ret == null)
             return null;
-        boolean isMailSent = sendMail(fileName);
-        if (isMailSent == false)
-            return null;
-
-         */
-        return ret;
+        boolean isWritten = writeHelper.writeAll(ret);
+        return isWritten ? ret : null;
     }
 
     public Product save(Product product){

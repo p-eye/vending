@@ -1,13 +1,15 @@
 package com.example.vending.helper.write;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.mail.MailAuthenticationException;
+import org.springframework.mail.MailException;
+import org.springframework.mail.MailSendException;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.File;
-import java.io.IOException;
 
 @Slf4j
 public class MailHelper {
@@ -51,13 +53,9 @@ public class MailHelper {
     }
 
     // 발송
-    public void send() {
-        try {
-            mailSender.send(message);
-            log.info("Sended mail");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+    public void send() throws MailAuthenticationException, MailSendException, MailException {
+        mailSender.send(message);
+        log.info("Sended mail");
     }
 
     public boolean sendMail(String fileName) {
@@ -74,12 +72,13 @@ public class MailHelper {
             mailHelper.setText(htmlContent, true);
             // 첨부 파일
             mailHelper.setAttach(fileName, "/Users/p-eye/project/spring/vending/src/main/resources/static/"+ fileName);
+            // 전송
             mailHelper.send();
             return true;
         }
-        catch(Exception e){
-            e.printStackTrace();
+        catch (Exception e){
+            log.error(e.getMessage());
+            return false;
         }
-        return false;
     }
 }

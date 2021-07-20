@@ -29,7 +29,10 @@ public class ProductService {
         List<Product> products = FileHelper.fileToProducts(file);
         if (products == null)
             throw new ApiRequestException("파일이 올바르지 않습니다");
-        return productRepository.saveToAll(products);
+        List<Product> ret = productRepository.saveToAll(products);
+        if (ret == null)
+            throw new ApiRequestException("파일 처리에서 에러가 생겼습니다");
+        return ret;
     }
 
     public void saveToDb(URL url) {

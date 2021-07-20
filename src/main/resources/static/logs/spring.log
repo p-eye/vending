@@ -2500,3 +2500,251 @@ insert into product (content, name, title, id) values ('ㅇ', 'ㅇ', 'ㅇ', 322)
 
 ;
 2021-07-20 17:42:45.708 DEBUG 2275 --- [http-nio-8080-exec-2] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 17:47:29.728 DEBUG 2275 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(ProductForm))
+2021-07-20 17:47:29.743 DEBUG 2275 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(void com.example.vending.service.ProductService.saveToDb(ProductForm))
+2021-07-20 17:47:29.743 DEBUG 2275 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(Product com.example.vending.repository.ProductRepository.saveToAll(Product))
+2021-07-20 17:47:29.746  INFO 2275 --- [http-nio-8080-exec-5] p6spy                                    : #1626770849746 | took 1ms | statement | connection 7| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 17:47:29.747  INFO 2275 --- [http-nio-8080-exec-5] c.e.v.repository.ProductRepository       : Saved product to DB
+2021-07-20 17:47:29.748 DEBUG 2275 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(boolean com.example.vending.helper.write.WriteHelper.writeAll(Product))
+2021-07-20 17:47:29.749 DEBUG 2275 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.helper.write.TxtHelper.writeText(Product))
+2021-07-20 17:47:29.751  INFO 2275 --- [http-nio-8080-exec-5] c.e.vending.helper.write.TxtHelper       : Saved product to .txt
+2021-07-20 17:47:31.735 ERROR 2275 --- [http-nio-8080-exec-5] c.e.vending.helper.write.MailHelper      : Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials m1sm6701141pfc.36 - gsmtp
+
+2021-07-20 17:47:31.742  INFO 2275 --- [http-nio-8080-exec-5] p6spy                                    : #1626770851742 | took 4ms | statement | connection 7| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('d', 'd', 'd', 323);
+2021-07-20 17:47:31.745  INFO 2275 --- [http-nio-8080-exec-5] p6spy                                    : #1626770851745 | took 2ms | commit | connection 7| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 17:47:31.755 DEBUG 2275 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 17:48:43.400  INFO 2275 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:48:43.402  INFO 2275 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-07-20 17:48:43.698  INFO 2275 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-07-20 17:48:43.942  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 17:48:43.945  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 17:48:44.263  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 17:48:44.273  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2021-07-20 17:48:44.530  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 17:48:44.533  INFO 2275 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 17:48:44.534  INFO 2275 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 17:48:44.544  INFO 2275 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 17:48:44.544  INFO 2275 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 589 ms
+2021-07-20 17:48:44.590  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-07-20 17:48:44.619  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-07-20 17:48:44.620  INFO 2275 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 17:48:44.675  INFO 2275 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 17:48:44.680  INFO 2275 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 17:48:44.801  INFO 2275 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 17:48:44.801  INFO 2275 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:48:44.943  WARN 2275 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 17:48:45.068  INFO 2275 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 17:48:45.184  INFO 2275 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 17:48:45.199  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 17:48:45.218  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.402 seconds (JVM running for 375.481)
+2021-07-20 17:48:45.220  INFO 2275 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-20 17:48:46.627  INFO 2275 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:48:46.631  INFO 2275 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-07-20 17:48:46.848  INFO 2275 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-07-20 17:48:47.054  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 17:48:47.056  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 17:48:47.263  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 17:48:47.266  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 17:48:47.434  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 17:48:47.436  INFO 2275 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 17:48:47.436  INFO 2275 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 17:48:47.447  INFO 2275 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 17:48:47.447  INFO 2275 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 382 ms
+2021-07-20 17:48:47.480  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-07-20 17:48:47.519  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-07-20 17:48:47.519  INFO 2275 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 17:48:47.551  INFO 2275 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 17:48:47.557  INFO 2275 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 17:48:47.611  INFO 2275 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 17:48:47.612  INFO 2275 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:48:47.755  WARN 2275 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 17:48:47.856  INFO 2275 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 17:48:47.936  INFO 2275 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 17:48:47.949  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 17:48:47.954  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.007 seconds (JVM running for 378.217)
+2021-07-20 17:48:47.955  INFO 2275 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-20 17:48:50.686  INFO 2275 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-20 17:48:50.691  INFO 2275 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-20 17:48:50.696  INFO 2275 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-20 17:48:50.725 DEBUG 2275 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(ProductForm))
+2021-07-20 17:48:50.737 DEBUG 2275 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(void com.example.vending.service.ProductService.saveToDb(ProductForm))
+2021-07-20 17:48:50.738 DEBUG 2275 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(Product com.example.vending.repository.ProductRepository.saveToAll(Product))
+2021-07-20 17:48:50.748  INFO 2275 --- [http-nio-8080-exec-1] p6spy                                    : #1626770930748 | took 3ms | statement | connection 14| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 17:48:50.769  INFO 2275 --- [http-nio-8080-exec-1] c.e.v.repository.ProductRepository       : Saved product to DB
+2021-07-20 17:48:50.769 DEBUG 2275 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(boolean com.example.vending.helper.write.WriteHelper.writeAll(Product))
+2021-07-20 17:48:50.771 DEBUG 2275 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.helper.write.TxtHelper.writeText(Product))
+2021-07-20 17:48:50.775  INFO 2275 --- [http-nio-8080-exec-1] c.e.vending.helper.write.TxtHelper       : Saved product to .txt
+2021-07-20 17:48:52.805 ERROR 2275 --- [http-nio-8080-exec-1] c.e.vending.helper.write.MailHelper      : Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials z5sm22510822pfb.114 - gsmtp
+
+2021-07-20 17:48:52.832  INFO 2275 --- [http-nio-8080-exec-1] p6spy                                    : #1626770932832 | took 0ms | statement | connection 14| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('gg', 'gg', 'gg', 324);
+2021-07-20 17:48:52.834  INFO 2275 --- [http-nio-8080-exec-1] p6spy                                    : #1626770932834 | took 1ms | commit | connection 14| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 17:48:52.873 DEBUG 2275 --- [http-nio-8080-exec-4] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 17:49:24.193 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(MultipartFile))
+2021-07-20 17:49:24.200 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.service.ProductService.saveToDb(MultipartFile))
+2021-07-20 17:49:24.533  INFO 2275 --- [http-nio-8080-exec-3] c.e.vending.helper.read.FileHelper       : Transformed file to List<Products>
+2021-07-20 17:49:24.534 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.repository.ProductRepository.saveToAll(List))
+2021-07-20 17:49:24.535  INFO 2275 --- [http-nio-8080-exec-3] p6spy                                    : #1626770964535 | took 0ms | statement | connection 15| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 17:49:24.535  INFO 2275 --- [http-nio-8080-exec-3] p6spy                                    : #1626770964535 | took 0ms | statement | connection 15| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 17:49:24.535  INFO 2275 --- [http-nio-8080-exec-3] p6spy                                    : #1626770964535 | took 0ms | statement | connection 15| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 17:49:24.536  INFO 2275 --- [http-nio-8080-exec-3] c.e.v.repository.ProductRepository       : Saved products to DB
+2021-07-20 17:49:24.536 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(boolean com.example.vending.helper.write.WriteHelper.writeAll(List))
+2021-07-20 17:49:24.536 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.helper.write.TxtHelper.writeText(List))
+2021-07-20 17:49:24.536  INFO 2275 --- [http-nio-8080-exec-3] c.e.vending.helper.write.TxtHelper       : Saved products to .txt
+2021-07-20 17:49:26.595 ERROR 2275 --- [http-nio-8080-exec-3] c.e.vending.helper.write.MailHelper      : Authentication failed; nested exception is javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 11sm22839673pfl.41 - gsmtp
+
+2021-07-20 17:49:26.603  INFO 2275 --- [http-nio-8080-exec-3] p6spy                                    : #1626770966603 | took 2ms | rollback | connection 15| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 17:49:26.612 DEBUG 2275 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(ResponseEntity com.example.vending.exception.ApiExceptionHandler.handleApiRequestException(ApiRequestException))
+2021-07-20 17:49:26.685  WARN 2275 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.vending.exception.ApiRequestException: 파일 처리에서 에러가 생겼습니다]
+2021-07-20 17:50:01.274  INFO 2275 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:50:01.276  INFO 2275 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-07-20 17:50:01.478  INFO 2275 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-07-20 17:50:01.797  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 17:50:01.801  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 17:50:01.974  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 17:50:01.977  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 17:50:02.144  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 17:50:02.147  INFO 2275 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 17:50:02.147  INFO 2275 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 17:50:02.156  INFO 2275 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 17:50:02.156  INFO 2275 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 347 ms
+2021-07-20 17:50:02.186  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-07-20 17:50:02.213  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-07-20 17:50:02.214  INFO 2275 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 17:50:02.246  INFO 2275 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 17:50:02.251  INFO 2275 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 17:50:02.317  INFO 2275 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 17:50:02.318  INFO 2275 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:50:02.421  WARN 2275 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 17:50:02.507  INFO 2275 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 17:50:02.581  INFO 2275 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 17:50:02.592  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 17:50:02.596  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.011 seconds (JVM running for 452.863)
+2021-07-20 17:50:02.598  INFO 2275 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-20 17:50:04.046  INFO 2275 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:50:04.051  INFO 2275 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-07-20 17:50:04.258  INFO 2275 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-07-20 17:50:04.471  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 17:50:04.475  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 17:50:04.633  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 17:50:04.636  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 17:50:04.781  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 17:50:04.783  INFO 2275 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 17:50:04.784  INFO 2275 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 17:50:04.791  INFO 2275 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 17:50:04.793  INFO 2275 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 310 ms
+2021-07-20 17:50:04.817  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-07-20 17:50:04.842  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-07-20 17:50:04.843  INFO 2275 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 17:50:04.872  INFO 2275 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 17:50:04.877  INFO 2275 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 17:50:04.936  INFO 2275 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 17:50:04.936  INFO 2275 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 17:50:05.035  WARN 2275 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 17:50:05.112  INFO 2275 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 17:50:05.179  INFO 2275 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 17:50:05.189  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 17:50:05.193  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 0.817 seconds (JVM running for 455.461)
+2021-07-20 17:50:05.194  INFO 2275 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-20 18:04:57.180  WARN 2275 --- [HikariPool-6 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=3m52s127ms).
+2021-07-20 18:48:07.898  WARN 2275 --- [HikariPool-6 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Thread starvation or clock leap detected (housekeeper delta=33m40s590ms).
+2021-07-20 18:54:30.641  INFO 2275 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 18:54:30.644  INFO 2275 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-07-20 18:54:30.688  INFO 2275 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-07-20 18:54:30.919  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 18:54:30.923  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 18:54:31.105  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 18:54:31.108  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 18:54:31.166  WARN 2275 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.example.vending.controller.ProductController] for bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]; nested exception is java.lang.ClassNotFoundException: com.example.vending.controller.ProductController
+2021-07-20 18:54:31.181  INFO 2275 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 18:54:31.200 ERROR 2275 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.example.vending.controller.ProductController] for bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]; nested exception is java.lang.ClassNotFoundException: com.example.vending.controller.ProductController
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1542) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:722) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:683) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findMergedAnnotationOnBean(DefaultListableBeanFactory.java:740) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:733) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:113) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:325) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:191) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.2.jar:2.5.2]
+	at com.example.vending.VendingApplication.main(VendingApplication.java:12) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+Caused by: java.lang.ClassNotFoundException: com.example.vending.controller.ProductController
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284) ~[spring-core-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:469) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1607) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1534) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 25 common frames omitted
+
+2021-07-20 18:54:32.650  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 2275 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 18:54:32.650  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 18:54:32.750  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 18:54:32.752  INFO 2275 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 18:54:32.916  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 18:54:32.919  INFO 2275 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 18:54:32.919  INFO 2275 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 18:54:32.928  INFO 2275 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 18:54:32.928  INFO 2275 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 277 ms
+2021-07-20 18:54:32.950  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-07-20 18:54:32.971  INFO 2275 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-07-20 18:54:32.972  INFO 2275 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 18:54:32.997  INFO 2275 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 18:54:33.003  INFO 2275 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 18:54:33.057  INFO 2275 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 18:54:33.058  INFO 2275 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 18:54:33.171  WARN 2275 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 18:54:33.251  INFO 2275 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 18:54:33.333  INFO 2275 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 18:54:33.346  INFO 2275 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 18:54:33.350  INFO 2275 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 0.723 seconds (JVM running for 2130.951)
+2021-07-20 18:54:33.351  INFO 2275 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

@@ -21,8 +21,12 @@ public class ProductService {
 
     private ProductRepository productRepository;
 
-    public void saveToDb(ProductForm form) {
-        save(form.toEntity());
+    public Product saveToDb(ProductForm form) {
+        Product ret = productRepository.saveToAll(form.toEntity());
+        if (ret == null)
+            throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
+        return ret;
+
     }
 
     public List<Product> saveToDb(MultipartFile file) {
@@ -31,18 +35,18 @@ public class ProductService {
             throw new ApiRequestException("파일이 올바르지 않습니다");
         List<Product> ret = productRepository.saveToAll(products);
         if (ret == null)
-            throw new ApiRequestException("파일 처리에서 에러가 생겼습니다");
+            throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         return ret;
     }
 
-    public void saveToDb(URL url) {
-        save(UrlHelper.urlToProduct(url));
+    public Product saveToDb(URL url) {
+        Product product = UrlHelper.urlToProduct(url);
+        if (product == null)
+            throw new ApiRequestException("url이 올바르지 않습니다");
+        Product ret = productRepository.saveToAll(product);
+        if (ret == null)
+            throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
+        return ret;
     }
-
-    public void save(Product product) {
-        if (product != null)
-            productRepository.saveToAll(product);
-    }
-
 
 }

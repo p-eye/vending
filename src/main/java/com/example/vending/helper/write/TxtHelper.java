@@ -2,6 +2,7 @@ package com.example.vending.helper.write;
 
 import com.example.vending.entity.Product;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedWriter;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Component
 @AllArgsConstructor
+@Slf4j
 public class TxtHelper {
 
     public String writeText(List<Product> products) {
@@ -30,6 +32,7 @@ public class TxtHelper {
             e.printStackTrace();
             return null;
         }
+        log.info("Saved products to .text");
         return file.getName();
     }
 
@@ -46,6 +49,7 @@ public class TxtHelper {
             e.printStackTrace();
             return null;
         }
+        log.info("Saved product to .text");
         return file.getName();
     }
 

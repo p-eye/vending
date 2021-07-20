@@ -1,35 +1,37 @@
 package com.example.vending.helper.read;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class ExcelHelper extends FileHelper {
 
     protected static List<String[]> openFile(MultipartFile file) {
 
         try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){
             Sheet sheet = workbook.getSheet("product");
-            if (sheet == null)
-                throw new IllegalAccessException("해당 시트가 존재하지 않습니다");
+            if (sheet == null) {
+                log.error("product 시트가 존재하지 않습니다");
+                return null;
+            }
             return sheetToTable(sheet);
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (IOException e) {
+            log.error(e.getMessage());
         }
         return null;
     }
 
     private static List<String[]> sheetToTable(Sheet sheet) {
-        try {
-            if (!isTable(sheet))
-                throw new IllegalAccessException("테이블이 올바르지 않습니다");
-            return rowsToTable(sheet);
-        } catch (Exception e) {
-            System.out.println(e);
+        if (!isTable(sheet)) {
+            log.error("테이블이 올바르지 않습니다");
+            return null;
         }
-        return null;
+        return rowsToTable(sheet);
     }
 
     private static boolean isTable(Sheet sheet) {

@@ -1,6 +1,7 @@
 package com.example.vending.helper.read;
 
 import com.example.vending.entity.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ enum Format {
     EXCEL, TXT
 }
 
+@Slf4j
 public class FileHelper {
 
     private static String EXCEL = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
@@ -33,17 +35,18 @@ public class FileHelper {
     {
         List<String[]> table = null;
         int typeIdx = getFileType(file);
-
-        if (typeIdx == EXCEL_IDX)
+        if (typeIdx == EXCEL_IDX) {
             table = ExcelHelper.openFile(file);
-        else if (typeIdx == TXT_IDX)
+        } else if (typeIdx == TXT_IDX) {
             table = TxtHelper.openFile(file);
+        }
+        if (table == null)
+            return null;
         return tableToProducts(table);
     }
 
     private static List<Product> tableToProducts(List<String[]> table) {
-        if (table == null)
-            return null;
+
         if (!isValidHeader(table.get(0)) || !isValidData(table))
             return null;
 
@@ -52,6 +55,7 @@ public class FileHelper {
             Product product= new Product(null, str[0], str[1], str[2]);
             products.add(product);
         });
+        log.info("Transformed file to List<Products>");
         return products;
     }
 
@@ -73,7 +77,6 @@ public class FileHelper {
             String data1 = str[1];
             String data2 = str[2];
         });
-
         return true;
     }
 

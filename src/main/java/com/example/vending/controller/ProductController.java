@@ -40,7 +40,7 @@ public class ProductController {
 
     @PostMapping("/product/save/file")
     public String saveToDb(MultipartFile file) {
-        productService.saveToDb(file);
+        List<Product> products = productService.saveToDb(file);
         return "redirect:/product/new";
     }
 

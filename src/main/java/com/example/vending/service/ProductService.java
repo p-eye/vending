@@ -2,9 +2,10 @@ package com.example.vending.service;
 
 import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
+import com.example.vending.exception.ApiRequestException;
+import com.example.vending.repository.ProductRepository;
 import com.example.vending.helper.read.FileHelper;
 import com.example.vending.helper.read.UrlHelper;
-import com.example.vending.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,17 +25,15 @@ public class ProductService {
         save(form.toEntity());
     }
 
-    public void saveToDb(MultipartFile file) {
-        saveAll(FileHelper.fileToProducts(file));
+    public List<Product> saveToDb(MultipartFile file) {
+        List<Product> products = FileHelper.fileToProducts(file);
+        if (products == null)
+            throw new ApiRequestException("파일이 올바르지 않습니다");
+        return productRepository.saveToAll(products);
     }
 
     public void saveToDb(URL url) {
         save(UrlHelper.urlToProduct(url));
-    }
-
-    public void saveAll(List<Product> products){
-        if (products != null)
-            productRepository.saveToAll(products);
     }
 
     public void save(Product product) {

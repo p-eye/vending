@@ -52,6 +52,7 @@ public class MailHelper {
     public void send() {
         try {
             mailSender.send(message);
+            log.info("Sended mail");
         }catch(Exception e) {
             e.printStackTrace();
         }

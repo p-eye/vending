@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-@Component
 @AllArgsConstructor
 @Slf4j
 public class TxtHelper {

@@ -1383,3 +1383,702 @@ insert into product (content, name, title, id) values ('g', 'g', 'g', 305);
 2021-07-20 13:44:03.407  INFO 869 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
 2021-07-20 13:44:03.411  INFO 869 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 0.785 seconds (JVM running for 1426.717)
 2021-07-20 13:44:03.413  INFO 869 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-20 13:45:47.038  INFO 869 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-20 13:45:47.047  INFO 869 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-20 13:45:47.052  INFO 869 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-20 13:45:47.095 DEBUG 869 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(ProductForm))
+2021-07-20 13:45:47.109 DEBUG 869 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(void com.example.vending.service.ProductService.saveToDb(ProductForm))
+2021-07-20 13:45:47.111 DEBUG 869 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(Product com.example.vending.repository.ProductRepository.saveToAll(Product))
+2021-07-20 13:45:47.113 DEBUG 869 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 13:45:47.125  INFO 869 --- [http-nio-8080-exec-1] p6spy                                    : #1626756347125 | took 7ms | statement | connection 62| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 13:45:47.132  INFO 869 --- [http-nio-8080-exec-1] c.e.v.repository.ProductRepository       : Saved product to DB
+2021-07-20 13:45:47.132 DEBUG 869 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.helper.write.TxtHelper.writeText(Product))
+2021-07-20 13:45:47.137  INFO 869 --- [http-nio-8080-exec-1] c.e.vending.helper.write.TxtHelper       : Saved product to .text
+2021-07-20 13:45:51.931  INFO 869 --- [http-nio-8080-exec-1] c.e.vending.helper.write.MailHelper      : Sended mail
+2021-07-20 13:45:51.933 DEBUG 869 --- [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 13:45:51.948  INFO 869 --- [http-nio-8080-exec-1] p6spy                                    : #1626756351948 | took 7ms | statement | connection 62| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('hh', 'hh', 'hh', 306);
+2021-07-20 13:45:51.952  INFO 869 --- [http-nio-8080-exec-1] p6spy                                    : #1626756351952 | took 3ms | commit | connection 62| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 13:45:51.988 DEBUG 869 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 14:01:33.531  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m30s219ms).
+2021-07-20 14:07:33.747  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m30s196ms).
+2021-07-20 14:14:34.152  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m30s378ms).
+2021-07-20 14:17:46.011  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=3m11s859ms).
+2021-07-20 14:23:45.943  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s936ms).
+2021-07-20 14:29:15.399  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s457ms).
+2021-07-20 14:35:14.847  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s439ms).
+2021-07-20 14:40:44.228  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s381ms).
+2021-07-20 14:46:43.661  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s404ms).
+2021-07-20 14:52:13.064  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s404ms).
+2021-07-20 14:58:12.526  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s453ms).
+2021-07-20 15:03:41.899  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s373ms).
+2021-07-20 15:09:41.356  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s447ms).
+2021-07-20 15:15:11.310  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s955ms).
+2021-07-20 15:21:10.763  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s450ms).
+2021-07-20 15:26:40.154  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s391ms).
+2021-07-20 15:32:39.553  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s391ms).
+2021-07-20 15:38:08.922  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s369ms).
+2021-07-20 15:44:08.309  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s382ms).
+2021-07-20 15:47:11.436  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=3m3s127ms).
+2021-07-20 15:53:11.061  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s632ms).
+2021-07-20 15:58:40.507  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s446ms).
+2021-07-20 16:04:39.985  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=5m29s454ms).
+2021-07-20 16:07:00.729  WARN 869 --- [HikariPool-18 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Thread starvation or clock leap detected (housekeeper delta=1m50s732ms).
+2021-07-20 16:21:35.977  INFO 869 --- [Thread-71] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:21:35.979  INFO 869 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2021-07-20 16:21:36.269  INFO 869 --- [Thread-71] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2021-07-20 16:21:36.514  INFO 869 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 869 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:21:36.519  INFO 869 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:21:36.687  INFO 869 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:21:36.691  INFO 869 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:21:36.884  INFO 869 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:21:36.887  INFO 869 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:21:36.888  INFO 869 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:21:36.897  INFO 869 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:21:36.898  INFO 869 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 370 ms
+2021-07-20 16:21:36.924  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2021-07-20 16:21:36.989  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2021-07-20 16:21:36.990  INFO 869 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:21:37.029  INFO 869 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:21:37.039  INFO 869 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:21:37.130  INFO 869 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:21:37.140  INFO 869 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:21:37.182  WARN 869 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2518072d] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+2021-07-20 16:21:37.182  INFO 869 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:21:37.183  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2021-07-20 16:21:37.384  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2021-07-20 16:21:37.387  INFO 869 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:21:37.403  INFO 869 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:21:37.416 ERROR 869 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2518072d] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.2.jar:2.5.2]
+	at com.example.vending.VendingApplication.main(VendingApplication.java:12) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2518072d] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:309) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1284) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2357) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:304) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.vending.repository.ProductRepository
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 41 common frames omitted
+
+2021-07-20 16:21:38.864  INFO 869 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 869 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:21:38.864  INFO 869 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:21:38.950  INFO 869 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:21:38.951  INFO 869 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:21:39.040  INFO 869 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:21:39.041  INFO 869 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:21:39.041  INFO 869 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:21:39.050  INFO 869 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:21:39.050  INFO 869 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 184 ms
+2021-07-20 16:21:39.070  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2021-07-20 16:21:39.090  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2021-07-20 16:21:39.091  INFO 869 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:21:39.122  INFO 869 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:21:39.125  INFO 869 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:21:39.161  INFO 869 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:21:39.161  INFO 869 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:21:39.170  WARN 869 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@21565e8c] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+2021-07-20 16:21:39.170  INFO 869 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:21:39.170  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2021-07-20 16:21:39.381  INFO 869 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2021-07-20 16:21:39.382  INFO 869 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:21:39.387  INFO 869 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:21:39.389 ERROR 869 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@21565e8c] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.2.jar:2.5.2]
+	at com.example.vending.VendingApplication.main(VendingApplication.java:12) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productService': Resolution of declared constructors on bean Class [com.example.vending.service.ProductService] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@21565e8c] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:309) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1284) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 24 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/vending/repository/ProductRepository
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2357) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:304) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.vending.repository.ProductRepository
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 41 common frames omitted
+
+2021-07-20 16:27:00.773  INFO 1694 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1694 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:27:00.777  INFO 1694 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:27:00.835  INFO 1694 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-20 16:27:00.836  INFO 1694 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-20 16:27:01.668  INFO 1694 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:27:01.685  INFO 1694 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:27:02.528  INFO 1694 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:27:02.535  INFO 1694 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:27:02.536  INFO 1694 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:27:02.667  INFO 1694 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:27:02.668  INFO 1694 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1832 ms
+2021-07-20 16:27:02.881  INFO 1694 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-20 16:27:02.941  INFO 1694 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-20 16:27:02.946  INFO 1694 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:27:03.147  INFO 1694 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:27:03.172  INFO 1694 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-20 16:27:03.227  INFO 1694 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-20 16:27:03.278  INFO 1694 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:27:03.572  INFO 1694 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:27:03.578  INFO 1694 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:27:03.702  WARN 1694 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'writeHelper': Resolution of declared constructors on bean Class [com.example.vending.helper.write.WriteHelper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@759b286] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+2021-07-20 16:27:03.703  INFO 1694 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:27:03.710  INFO 1694 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-20 16:27:03.931  INFO 1694 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-20 16:27:03.936  INFO 1694 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:27:03.952  INFO 1694 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:27:03.967 ERROR 1694 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'writeHelper': Resolution of declared constructors on bean Class [com.example.vending.helper.write.WriteHelper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@759b286] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.2.jar:2.5.2]
+	at com.example.vending.VendingApplication.main(VendingApplication.java:12) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'writeHelper': Resolution of declared constructors on bean Class [com.example.vending.helper.write.WriteHelper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@759b286] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'writeHelper': Resolution of declared constructors on bean Class [com.example.vending.helper.write.WriteHelper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@759b286] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 38 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'writeHelper': Resolution of declared constructors on bean Class [com.example.vending.helper.write.WriteHelper] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@759b286] failed; nested exception is java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:309) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1284) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1201) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:564) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1380) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1300) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 52 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/example/vending/helper/write/MailHelper
+	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3137) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2357) ~[na:na]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:304) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 65 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.example.vending.helper.write.MailHelper
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 69 common frames omitted
+
+2021-07-20 16:27:17.396  INFO 1711 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1711 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:27:17.402  INFO 1711 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:27:17.452  INFO 1711 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-20 16:27:17.452  INFO 1711 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-20 16:27:18.217  INFO 1711 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:27:18.231  INFO 1711 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:27:19.075  INFO 1711 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:27:19.084  INFO 1711 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:27:19.085  INFO 1711 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:27:19.207  INFO 1711 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:27:19.207  INFO 1711 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1755 ms
+2021-07-20 16:27:19.398  INFO 1711 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-20 16:27:19.456  INFO 1711 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-20 16:27:19.460  INFO 1711 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:27:19.633  INFO 1711 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:27:19.652  INFO 1711 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-20 16:27:19.700  INFO 1711 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-20 16:27:19.745  INFO 1711 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:27:20.015  INFO 1711 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:27:20.020  INFO 1711 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:27:20.109  WARN 1711 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'writeHelper' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/helper/write/WriteHelper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.vending.helper.write.TxtHelper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-07-20 16:27:20.109  INFO 1711 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:27:20.114  INFO 1711 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-20 16:27:20.350  INFO 1711 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-20 16:27:20.365  INFO 1711 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:27:20.395  INFO 1711 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:27:20.415 ERROR 1711 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.vending.helper.write.WriteHelper required a bean of type 'com.example.vending.helper.write.TxtHelper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.vending.helper.write.TxtHelper' in your configuration.
+
+2021-07-20 16:28:57.544  INFO 1724 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1724 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:28:57.549  INFO 1724 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:28:57.603  INFO 1724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-20 16:28:57.604  INFO 1724 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-20 16:28:58.429  INFO 1724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:28:58.445  INFO 1724 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:28:58.652  WARN 1724 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.example.vending.helper.write.WriteHelper] for bean with name 'writeHelper' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/helper/write/WriteHelper.class]; nested exception is java.lang.ClassNotFoundException: com.example.vending.helper.write.WriteHelper
+2021-07-20 16:28:58.667  INFO 1724 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:28:58.685 ERROR 1724 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [com.example.vending.helper.write.WriteHelper] for bean with name 'writeHelper' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/helper/write/WriteHelper.class]; nested exception is java.lang.ClassNotFoundException: com.example.vending.helper.write.WriteHelper
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1542) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:686) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:656) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:722) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getType(AbstractBeanFactory.java:683) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findMergedAnnotationOnBean(DefaultListableBeanFactory.java:740) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAnnotationOnBean(DefaultListableBeanFactory.java:733) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.boot.sql.init.dependency.AnnotationDependsOnDatabaseInitializationDetector.detect(AnnotationDependsOnDatabaseInitializationDetector.java:36) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.detectDependsOnInitializationBeanNames(DatabaseInitializationDependencyConfigurer.java:152) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.sql.init.dependency.DatabaseInitializationDependencyConfigurer$DependsOnDatabaseInitializationPostProcessor.postProcessBeanFactory(DatabaseInitializationDependencyConfigurer.java:113) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:325) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:191) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.8.jar:5.3.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.2.jar:2.5.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332) ~[spring-boot-2.5.2.jar:2.5.2]
+	at com.example.vending.VendingApplication.main(VendingApplication.java:12) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+Caused by: java.lang.ClassNotFoundException: com.example.vending.helper.write.WriteHelper
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.2.jar:2.5.2]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:284) ~[spring-core-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:469) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1607) ~[spring-beans-5.3.8.jar:5.3.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1534) ~[spring-beans-5.3.8.jar:5.3.8]
+	... 25 common frames omitted
+
+2021-07-20 16:30:29.026  INFO 1749 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1749 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:30:29.030  INFO 1749 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:30:29.083  INFO 1749 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-20 16:30:29.084  INFO 1749 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-20 16:30:29.891  INFO 1749 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:30:29.905  INFO 1749 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:30:30.785  INFO 1749 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:30:30.793  INFO 1749 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:30:30.793  INFO 1749 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:30:30.926  INFO 1749 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:30:30.927  INFO 1749 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1843 ms
+2021-07-20 16:30:31.152  INFO 1749 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-20 16:30:31.223  INFO 1749 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-20 16:30:31.228  INFO 1749 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:30:31.442  INFO 1749 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:30:31.465  INFO 1749 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-20 16:30:31.527  INFO 1749 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-20 16:30:31.580  INFO 1749 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:30:31.888  INFO 1749 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:30:31.905  INFO 1749 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:30:32.031  WARN 1749 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productRepository' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/repository/ProductRepository.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'writeHelper' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/helper/write/WriteHelper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.vending.helper.write.MailHelper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-07-20 16:30:32.031  INFO 1749 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:30:32.037  INFO 1749 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-20 16:30:32.331  INFO 1749 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-20 16:30:32.336  INFO 1749 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:30:32.352  INFO 1749 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:30:32.364 ERROR 1749 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.vending.helper.write.WriteHelper required a bean of type 'com.example.vending.helper.write.MailHelper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.vending.helper.write.MailHelper' in your configuration.
+
+2021-07-20 16:35:12.081  INFO 1774 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1774 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:35:12.085  INFO 1774 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:35:12.138  INFO 1774 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-20 16:35:12.138  INFO 1774 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-20 16:35:12.944  INFO 1774 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:35:12.958  INFO 1774 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:35:13.819  INFO 1774 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:35:13.826  INFO 1774 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:35:13.826  INFO 1774 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:35:13.952  INFO 1774 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:35:13.952  INFO 1774 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1813 ms
+2021-07-20 16:35:14.154  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-20 16:35:14.218  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-20 16:35:14.223  INFO 1774 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:35:14.425  INFO 1774 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:35:14.458  INFO 1774 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-07-20 16:35:14.531  INFO 1774 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-07-20 16:35:14.581  INFO 1774 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:35:14.893  INFO 1774 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:35:14.899  INFO 1774 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:35:15.174  WARN 1774 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-20 16:35:15.440  INFO 1774 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-20 16:35:15.680  INFO 1774 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-20 16:35:15.722  INFO 1774 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-20 16:35:15.745  INFO 1774 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 4.156 seconds (JVM running for 4.95)
+2021-07-20 16:35:26.666  INFO 1774 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-20 16:35:26.667  INFO 1774 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-20 16:35:26.670  INFO 1774 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-20 16:35:26.728 DEBUG 1774 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(MultipartFile))
+2021-07-20 16:35:26.745 DEBUG 1774 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.service.ProductService.saveToDb(MultipartFile))
+2021-07-20 16:35:27.135 ERROR 1774 --- [http-nio-8080-exec-1] c.e.vending.helper.read.ExcelHelper      : 테이블이 올바르지 않습니다
+2021-07-20 16:35:27.148  INFO 1774 --- [http-nio-8080-exec-1] p6spy                                    : #1626766527148 | took 10ms | rollback | connection 3| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 16:35:27.158 DEBUG 1774 --- [http-nio-8080-exec-1] com.example.vending.aop.LogTraceAop      : START: execution(ResponseEntity com.example.vending.exception.ApiExceptionHandler.handleApiRequestException(ApiRequestException))
+2021-07-20 16:35:27.221  WARN 1774 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.example.vending.exception.ApiRequestException: 파일이 올바르지 않습니다]
+2021-07-20 16:35:48.410 DEBUG 1774 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(MultipartFile))
+2021-07-20 16:35:48.418 DEBUG 1774 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.service.ProductService.saveToDb(MultipartFile))
+2021-07-20 16:35:48.527  INFO 1774 --- [http-nio-8080-exec-3] c.e.vending.helper.read.FileHelper       : Transformed file to List<Products>
+2021-07-20 16:35:48.527 DEBUG 1774 --- [http-nio-8080-exec-3] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.repository.ProductRepository.saveToAll(List))
+2021-07-20 16:35:48.545 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:35:48.555  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548555 | took 3ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:35:48.567 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:35:48.569  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548569 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:35:48.569 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:35:48.569  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548569 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:35:48.569  INFO 1774 --- [http-nio-8080-exec-3] c.e.v.repository.ProductRepository       : Saved products to DB
+2021-07-20 16:35:48.573 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:35:48.580  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548580 | took 3ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('2', '2', '2', 307);
+2021-07-20 16:35:48.581 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:35:48.604  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548604 | took 21ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('ㄴ', 'ㄹ', 'ㄹ', 308);
+2021-07-20 16:35:48.605 DEBUG 1774 --- [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:35:48.607  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548607 | took 1ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('ㅇㄹ', 'ㅇㄹ', 'ㅇㄴㄹ', 309);
+2021-07-20 16:35:48.610  INFO 1774 --- [http-nio-8080-exec-3] p6spy                                    : #1626766548610 | took 2ms | commit | connection 4| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 16:35:48.646 DEBUG 1774 --- [http-nio-8080-exec-2] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 16:36:07.130 DEBUG 1774 --- [http-nio-8080-exec-4] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(MultipartFile))
+2021-07-20 16:36:07.135 DEBUG 1774 --- [http-nio-8080-exec-4] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.service.ProductService.saveToDb(MultipartFile))
+2021-07-20 16:36:07.205  INFO 1774 --- [http-nio-8080-exec-4] c.e.vending.helper.read.FileHelper       : Transformed file to List<Products>
+2021-07-20 16:36:07.206 DEBUG 1774 --- [http-nio-8080-exec-4] com.example.vending.aop.LogTraceAop      : START: execution(List com.example.vending.repository.ProductRepository.saveToAll(List))
+2021-07-20 16:36:07.206 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:36:07.207  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567207 | took 1ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:36:07.208 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:36:07.209  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567209 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:36:07.210 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:36:07.211  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567211 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:36:07.211  INFO 1774 --- [http-nio-8080-exec-4] c.e.v.repository.ProductRepository       : Saved products to DB
+2021-07-20 16:36:07.212 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:36:07.214  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567214 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('2', '2', '2', 310);
+2021-07-20 16:36:07.214 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:36:07.216  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567215 | took 1ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('ㄴ', 'ㄹ', 'ㄹ', 311);
+2021-07-20 16:36:07.216 DEBUG 1774 --- [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:36:07.218  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567218 | took 1ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('ㅇㄹ', 'ㅇㄹ', 'ㅇㄴㄹ', 312);
+2021-07-20 16:36:07.219  INFO 1774 --- [http-nio-8080-exec-4] p6spy                                    : #1626766567219 | took 0ms | commit | connection 5| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 16:36:07.227 DEBUG 1774 --- [http-nio-8080-exec-5] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 16:36:27.486 DEBUG 1774 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.saveToDb(ProductForm))
+2021-07-20 16:36:27.499 DEBUG 1774 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(void com.example.vending.service.ProductService.saveToDb(ProductForm))
+2021-07-20 16:36:27.500 DEBUG 1774 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(Product com.example.vending.repository.ProductRepository.saveToAll(Product))
+2021-07-20 16:36:27.501 DEBUG 1774 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+2021-07-20 16:36:27.504  INFO 1774 --- [http-nio-8080-exec-6] p6spy                                    : #1626766587504 | took 1ms | statement | connection 6| url jdbc:h2:tcp://localhost/~/project/spring/vending
+call next value for hibernate_sequence
+call next value for hibernate_sequence;
+2021-07-20 16:36:27.505  INFO 1774 --- [http-nio-8080-exec-6] c.e.v.repository.ProductRepository       : Saved product to DB
+2021-07-20 16:36:27.506 DEBUG 1774 --- [http-nio-8080-exec-6] com.example.vending.aop.LogTraceAop      : START: execution(boolean com.example.vending.helper.write.WriteHelper.writeAll(Product))
+2021-07-20 16:36:27.557  INFO 1774 --- [http-nio-8080-exec-6] c.e.vending.helper.write.TxtHelper       : Saved product to .text
+2021-07-20 16:36:31.987  INFO 1774 --- [http-nio-8080-exec-6] c.e.vending.helper.write.MailHelper      : Sended mail
+2021-07-20 16:36:31.991 DEBUG 1774 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    insert 
+    into
+        product
+        (content, name, title, id) 
+    values
+        (?, ?, ?, ?)
+2021-07-20 16:36:32.009  INFO 1774 --- [http-nio-8080-exec-6] p6spy                                    : #1626766592009 | took 14ms | statement | connection 6| url jdbc:h2:tcp://localhost/~/project/spring/vending
+insert into product (content, name, title, id) values (?, ?, ?, ?)
+insert into product (content, name, title, id) values ('g', 'g', 'g', 313);
+2021-07-20 16:36:32.011  INFO 1774 --- [http-nio-8080-exec-6] p6spy                                    : #1626766592011 | took 2ms | commit | connection 6| url jdbc:h2:tcp://localhost/~/project/spring/vending
+
+;
+2021-07-20 16:36:32.027 DEBUG 1774 --- [http-nio-8080-exec-7] com.example.vending.aop.LogTraceAop      : START: execution(String com.example.vending.controller.ProductController.newProductForm())
+2021-07-20 16:37:32.879  INFO 1774 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:37:32.884  INFO 1774 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-20 16:37:33.118  INFO 1774 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-20 16:37:33.401  INFO 1774 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 1774 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-20 16:37:33.404  INFO 1774 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-20 16:37:33.722  INFO 1774 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-20 16:37:33.736  INFO 1774 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2021-07-20 16:37:34.079  INFO 1774 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-20 16:37:34.087  INFO 1774 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-20 16:37:34.088  INFO 1774 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-20 16:37:34.122  INFO 1774 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-20 16:37:34.122  INFO 1774 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 711 ms
+2021-07-20 16:37:34.214  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-20 16:37:34.259  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-20 16:37:34.259  INFO 1774 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-20 16:37:34.442  INFO 1774 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-20 16:37:34.447  INFO 1774 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-20 16:37:34.536  INFO 1774 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-20 16:37:34.536  INFO 1774 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:37:34.575  WARN 1774 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productController' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/controller/ProductController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'productService' defined in file [/Users/p-eye/project/spring/vending/build/classes/java/main/com/example/vending/service/ProductService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.vending.repository.ProductRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2021-07-20 16:37:34.576  INFO 1774 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-20 16:37:34.577  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-07-20 16:37:34.791  INFO 1774 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-07-20 16:37:34.795  INFO 1774 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-20 16:37:34.817  INFO 1774 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-20 16:37:34.832 ERROR 1774 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.example.vending.service.ProductService required a bean of type 'com.example.vending.repository.ProductRepository' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.example.vending.repository.ProductRepository' in your configuration.
+

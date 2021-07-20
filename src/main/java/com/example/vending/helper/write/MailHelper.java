@@ -20,12 +20,14 @@ public class MailHelper {
     private final String title = "[Springboot] Saved file list";
     private final String content = "this mail is sent automatically";
 
-    // 생성자
-    public MailHelper(JavaMailSender mailSender) throws
-            MessagingException {
+    public MailHelper(JavaMailSender mailSender) {
         this.mailSender = mailSender;
         message = mailSender.createMimeMessage();
-        messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+        try {
+            messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+        } catch (MessagingException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     // 받는 사람 이메일
@@ -44,7 +46,7 @@ public class MailHelper {
     }
 
     // 첨부 파일
-    public void setAttach(String displayFileName, String path) throws MessagingException, IOException {
+    public void setAttach(String displayFileName, String path) throws MessagingException, NullPointerException {
         messageHelper.addAttachment(displayFileName, new File(path));
     }
 
@@ -53,7 +55,7 @@ public class MailHelper {
         try {
             mailSender.send(message);
             log.info("Sended mail");
-        }catch(Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }

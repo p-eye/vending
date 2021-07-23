@@ -1,4 +1,4 @@
-package com.example.vending.helper.read;
+package com.example.vending.common.helper.read;
 
 import com.example.vending.entity.Product;
 import lombok.extern.slf4j.Slf4j;

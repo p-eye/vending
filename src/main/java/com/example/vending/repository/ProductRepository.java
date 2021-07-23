@@ -1,12 +1,9 @@
 package com.example.vending.repository;
 
 import com.example.vending.entity.Product;
-import com.example.vending.helper.write.MailHelper;
-import com.example.vending.helper.write.TxtHelper;
-import com.example.vending.helper.write.WriteHelper;
+import com.example.vending.common.helper.write.WriteHelper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

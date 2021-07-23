@@ -1,4 +1,4 @@
-package com.example.vending.helper.write;
+package com.example.vending.common.helper.write;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailAuthenticationException;

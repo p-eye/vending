@@ -1,4 +1,4 @@
-package com.example.vending.aop;
+package com.example.vending.common.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,7 +13,7 @@ public class LogTraceAop {
 
     @Around("execution(* com.example.vending..*(..))")
     public Object printLog(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.debug("START: " + joinPoint.toString());
+        log.debug(joinPoint.toString());
         return joinPoint.proceed();
     }
 }

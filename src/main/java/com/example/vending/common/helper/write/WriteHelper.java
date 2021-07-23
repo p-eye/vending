@@ -1,4 +1,4 @@
-package com.example.vending.helper.write;
+package com.example.vending.common.helper.write;
 
 import com.example.vending.entity.Product;
 import lombok.extern.slf4j.Slf4j;

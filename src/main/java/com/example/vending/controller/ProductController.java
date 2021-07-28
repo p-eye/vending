@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.net.URL;
 
@@ -36,7 +37,7 @@ public class ProductController {
     }
 
     @PostMapping("/product/save/file")
-    public String saveToDb(MultipartFile file) {
+    public String saveToDb(RedirectAttributes redirectAttributes, MultipartFile file) {
         productService.saveToDb(file);
         return "redirect:/product/new";
     }

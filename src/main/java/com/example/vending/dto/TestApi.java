@@ -7,8 +7,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class EmpInfo {
+public class TestApi {
+   private int userId;
    private int id;
-   private String domain;
+   private String title;
+   private boolean completed;
 
 }

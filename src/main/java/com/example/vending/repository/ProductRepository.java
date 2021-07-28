@@ -18,7 +18,9 @@ public class ProductRepository {
     private final EntityManager em;
     private final WriteHelper writeHelper;
 
+
     public Product saveToAll(Product product) {
+        // private save 가드 후 호출
         Product ret = save(product);
         if (ret == null)
             return null;
@@ -34,13 +36,12 @@ public class ProductRepository {
         return isWritten ? ret : null;
     }
 
-    public Product save(Product product){
+    private Product save(Product product){
         em.persist(product);
-        log.info("Saved product to DB");
         return product;
     }
 
-    public List<Product> save(List<Product> products){
+    private List<Product> save(List<Product> products){
         List<Product> result = new ArrayList<>();
 
         for (Product product : products) {

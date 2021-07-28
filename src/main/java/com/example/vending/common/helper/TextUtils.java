@@ -32,7 +32,7 @@ public class TextUtils {
         }
     }
 
-    public String writeListToText(List<Product> products) {
+    private String writeListToText(List<Product> products) {
         String fileNameTimeStamped = createTimeStampedFileName();
         File file = new File(filePath + fileNameTimeStamped);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {

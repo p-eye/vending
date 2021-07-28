@@ -892,3 +892,113 @@ insert into product (content, name, title, id) values ('asdfasf', 'asdf', '123',
 2021-07-28 15:19:17.556  INFO 4203 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 2021-07-28 15:19:17.624  INFO 4203 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2021-07-28 15:19:17.625  INFO 4203 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 15:19:17.822  WARN 4203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-28 15:19:17.884  INFO 4203 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-28 15:19:17.992  INFO 4203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-28 15:19:18.006  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-28 15:19:18.009  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.186 seconds (JVM running for 95.021)
+2021-07-28 15:19:18.010  INFO 4203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-28 16:06:53.381  WARN 4203 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=36m35s666ms).
+2021-07-28 16:38:38.681  WARN 4203 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=31m45s302ms).
+2021-07-28 17:07:01.028  WARN 4203 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=27m52s333ms).
+2021-07-28 17:21:11.919  WARN 4203 --- [HikariPool-3 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=13m10s879ms).
+2021-07-28 17:24:27.510  INFO 4203 --- [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:27.514  INFO 4203 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-07-28 17:24:27.577  INFO 4203 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-07-28 17:24:27.851  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 4203 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-28 17:24:27.853  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-28 17:24:28.088  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-28 17:24:28.093  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-07-28 17:24:28.352  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-28 17:24:28.356  INFO 4203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-28 17:24:28.356  INFO 4203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-28 17:24:28.373  INFO 4203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-28 17:24:28.374  INFO 4203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 511 ms
+2021-07-28 17:24:28.409  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-07-28 17:24:28.452  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-07-28 17:24:28.453  INFO 4203 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-28 17:24:28.492  INFO 4203 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-28 17:24:28.497  INFO 4203 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-28 17:24:28.582  INFO 4203 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-28 17:24:28.582  INFO 4203 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:28.793  WARN 4203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-28 17:24:28.852  INFO 4203 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-28 17:24:29.012  INFO 4203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-28 17:24:29.026  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-28 17:24:29.031  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.326 seconds (JVM running for 1161.93)
+2021-07-28 17:24:29.033  INFO 4203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-28 17:24:32.518  INFO 4203 --- [Thread-39] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:32.522  INFO 4203 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-07-28 17:24:32.740  INFO 4203 --- [Thread-39] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-07-28 17:24:32.989  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 4203 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-28 17:24:32.994  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-28 17:24:33.195  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-28 17:24:33.200  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2021-07-28 17:24:33.377  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-28 17:24:33.380  INFO 4203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-28 17:24:33.381  INFO 4203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-28 17:24:33.393  INFO 4203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-28 17:24:33.394  INFO 4203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 389 ms
+2021-07-28 17:24:33.425  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-07-28 17:24:33.473  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-07-28 17:24:33.474  INFO 4203 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-28 17:24:33.510  INFO 4203 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-28 17:24:33.516  INFO 4203 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-28 17:24:33.588  INFO 4203 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-28 17:24:33.589  INFO 4203 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:33.781  WARN 4203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-28 17:24:33.854  INFO 4203 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-28 17:24:33.945  INFO 4203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-28 17:24:33.957  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-28 17:24:33.961  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 1.112 seconds (JVM running for 1166.86)
+2021-07-28 17:24:33.962  INFO 4203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-28 17:24:45.555  INFO 4203 --- [Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:45.556  INFO 4203 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-07-28 17:24:45.764  INFO 4203 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-07-28 17:24:45.998  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 4203 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-28 17:24:46.001  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-28 17:24:46.201  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-28 17:24:46.206  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-07-28 17:24:46.374  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-28 17:24:46.377  INFO 4203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-28 17:24:46.377  INFO 4203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-28 17:24:46.386  INFO 4203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-28 17:24:46.386  INFO 4203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 376 ms
+2021-07-28 17:24:46.411  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-07-28 17:24:46.451  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-07-28 17:24:46.451  INFO 4203 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-28 17:24:46.482  INFO 4203 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-28 17:24:46.492  INFO 4203 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-28 17:24:46.548  INFO 4203 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-28 17:24:46.548  INFO 4203 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:46.680  WARN 4203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-28 17:24:46.733  INFO 4203 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-28 17:24:46.810  INFO 4203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-28 17:24:46.820  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-28 17:24:46.824  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 0.948 seconds (JVM running for 1179.724)
+2021-07-28 17:24:46.825  INFO 4203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-28 17:24:50.368  INFO 4203 --- [Thread-63] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:50.370  INFO 4203 --- [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-07-28 17:24:50.619  INFO 4203 --- [Thread-63] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-07-28 17:24:50.810  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Starting VendingApplication using Java 11.0.10 on p-eyeui-MacBookAir.local with PID 4203 (/Users/p-eye/project/spring/vending/build/classes/java/main started by p-eye in /Users/p-eye/project/spring/vending)
+2021-07-28 17:24:50.813  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : No active profile set, falling back to default profiles: default
+2021-07-28 17:24:50.981  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-28 17:24:50.984  INFO 4203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2021-07-28 17:24:51.121  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-07-28 17:24:51.124  INFO 4203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-28 17:24:51.124  INFO 4203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-28 17:24:51.133  INFO 4203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-28 17:24:51.133  INFO 4203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 314 ms
+2021-07-28 17:24:51.159  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-07-28 17:24:51.193  INFO 4203 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-07-28 17:24:51.194  INFO 4203 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:tcp://localhost/~/project/spring/vending'
+2021-07-28 17:24:51.228  INFO 4203 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-28 17:24:51.235  INFO 4203 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-07-28 17:24:51.293  INFO 4203 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-28 17:24:51.293  INFO 4203 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-28 17:24:51.429  WARN 4203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-28 17:24:51.481  INFO 4203 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2021-07-28 17:24:51.559  INFO 4203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-28 17:24:51.570  INFO 4203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-07-28 17:24:51.572  INFO 4203 --- [restartedMain] com.example.vending.VendingApplication   : Started VendingApplication in 0.849 seconds (JVM running for 1184.472)
+2021-07-28 17:24:51.573  INFO 4203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

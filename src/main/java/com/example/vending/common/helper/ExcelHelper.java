@@ -1,7 +1,8 @@
-package com.example.vending.common.helper.read;
+package com.example.vending.common.helper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -9,9 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-public class ExcelHelper extends FileHelper {
+@Component
+public class ExcelHelper {
 
-    protected static List<String[]> openFile(MultipartFile file) {
+    public List<String[]> openFile(MultipartFile file) {
 
         try (Workbook workbook = WorkbookFactory.create(file.getInputStream())){
             Sheet sheet = workbook.getSheet("product");
@@ -26,7 +28,7 @@ public class ExcelHelper extends FileHelper {
         return null;
     }
 
-    private static List<String[]> sheetToTable(Sheet sheet) {
+    private List<String[]> sheetToTable(Sheet sheet) {
         if (!isTable(sheet)) {
             log.error("테이블이 올바르지 않습니다");
             return null;
@@ -34,7 +36,7 @@ public class ExcelHelper extends FileHelper {
         return rowsToTable(sheet);
     }
 
-    private static boolean isTable(Sheet sheet) {
+    private boolean isTable(Sheet sheet) {
         int firstRowNum = sheet.getFirstRowNum();
         int lastRowNum = sheet.getLastRowNum();
         if (firstRowNum != 0)
@@ -47,7 +49,7 @@ public class ExcelHelper extends FileHelper {
 
             int firstCellNum = row.getFirstCellNum();
             int lastCellNum = row.getLastCellNum();
-            if (firstCellNum != 0 || lastCellNum != columnCnt)
+            if (firstCellNum != 0 || lastCellNum != Define.columnCnt)
                 return false;
 
             for (int c = firstCellNum; c < lastCellNum; c++) {
@@ -59,7 +61,7 @@ public class ExcelHelper extends FileHelper {
         return true;
     }
 
-    private static List<String[]> rowsToTable(Sheet sheet) {
+    private List<String[]> rowsToTable(Sheet sheet) {
 
         List<String[]> table = new ArrayList<>();
 

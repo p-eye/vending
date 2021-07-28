@@ -1,4 +1,4 @@
-package com.example.vending.common.helper.write;
+package com.example.vending.common.helper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailAuthenticationException;
@@ -33,27 +33,27 @@ public class MailHelper {
     }
 
     // 받는 사람 이메일
-    public void setTo(String email) throws MessagingException {
+    private void setTo(String email) throws MessagingException {
         messageHelper.setTo(email);
     }
 
     // 제목
-    public void setSubject(String subject) throws MessagingException {
+    private void setSubject(String subject) throws MessagingException {
         messageHelper.setSubject(subject);
     }
 
     // 메일 내용
-    public void setText(String text, boolean useHtml) throws MessagingException {
+    private void setText(String text, boolean useHtml) throws MessagingException {
         messageHelper.setText(text, useHtml);
     }
 
     // 첨부 파일
-    public void setAttach(String displayFileName, String path) throws MessagingException, NullPointerException {
+    private void setAttach(String displayFileName, String path) throws MessagingException, NullPointerException {
         messageHelper.addAttachment(displayFileName, new File(path));
     }
 
     // 발송
-    public void send() throws MailAuthenticationException, MailSendException, MailException {
+    private void send() throws MailAuthenticationException, MailSendException, MailException {
         mailSender.send(message);
         log.info("Sended mail");
     }

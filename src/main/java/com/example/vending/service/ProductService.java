@@ -1,12 +1,11 @@
 package com.example.vending.service;
 
-import com.example.vending.common.helper.TextUtils;
+import com.example.vending.common.helper.Helper;
+import com.example.vending.common.helper.UrlHelper;
 import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.exception.ApiRequestException;
 import com.example.vending.repository.ProductRepository;
-import com.example.vending.common.helper.read.FileHelper;
-import com.example.vending.common.helper.read.UrlHelper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +20,8 @@ import java.util.List;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private Helper fileHelper;
+    private UrlHelper urlHelper;
 
     public Product saveToDb(ProductForm form) {
         Product ret = productRepository.saveToAll(form.toEntity());
@@ -32,7 +33,7 @@ public class ProductService {
 
     public List<Product> saveToDb(MultipartFile file) {
 
-        List<Product> products = FileHelper.fileToProducts(file);
+        List<Product> products = fileHelper.fileToProducts(file);
         if (products == null) {
             throw new ApiRequestException("파일이 올바르지 않습니다");
         }
@@ -44,7 +45,7 @@ public class ProductService {
     }
 
     public Product saveToDb(URL url) {
-        Product product = UrlHelper.urlToProduct(url);
+        Product product = urlHelper.urlToProduct(url);
         if (product == null) {
             throw new ApiRequestException("url이 올바르지 않습니다");
         }

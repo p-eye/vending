@@ -15,11 +15,10 @@ import java.util.List;
 @Component
 @AllArgsConstructor
 @Slf4j
-public class TextUtils {
+public class TextHelper {
 
     private final String filePath = "/Users/p-eye/project/spring/vending/src/main/resources/static/";
     private final String dateFormat = "yyyyMMdd_HHmmss.SSS";
-    protected static int columnCnt = 3;
 
     /*
     write
@@ -103,7 +102,7 @@ public class TextUtils {
             for (String elem : splited)
                 if (elem.isEmpty())
                     return false;
-            if (splited.length != columnCnt)
+            if (splited.length != Define.columnCnt)
                 return false;
         }
         return true;

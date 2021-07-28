@@ -1,7 +1,7 @@
 package com.example.vending.repository;
 
+import com.example.vending.common.helper.Helper;
 import com.example.vending.entity.Product;
-import com.example.vending.common.helper.write.WriteHelper;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -16,15 +16,14 @@ import java.util.List;
 public class ProductRepository {
 
     private final EntityManager em;
-    private final WriteHelper writeHelper;
-
+    private final Helper helper;
 
     public Product saveToAll(Product product) {
         // private save 가드 후 호출
         Product ret = save(product);
         if (ret == null)
             return null;
-        boolean isWritten = writeHelper.writeAll(ret);
+        boolean isWritten = helper.writeAll(ret);
         return isWritten ? ret : null;
     }
 
@@ -32,7 +31,7 @@ public class ProductRepository {
         List<Product> ret = save(products);
         if (ret == null)
             return null;
-        boolean isWritten = writeHelper.writeAll(ret);
+        boolean isWritten = helper.writeAll(ret);
         return isWritten ? ret : null;
     }
 

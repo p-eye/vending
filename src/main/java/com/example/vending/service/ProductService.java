@@ -21,16 +21,12 @@ import java.util.List;
 public class ProductService {
 
     private ProductRepository productRepository;
-    private final TextUtils textHelper;
 
     public Product saveToDb(ProductForm form) {
-        textHelper.writeText(form.toEntity());
-        /*
         Product ret = productRepository.saveToAll(form.toEntity());
         if (ret == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
-        */
         return null;
     }
 
@@ -40,14 +36,10 @@ public class ProductService {
         if (products == null) {
             throw new ApiRequestException("파일이 올바르지 않습니다");
         }
-        textHelper.writeText(products);
-        /*
         List<Product> ret = productRepository.saveToAll(products);
         if (ret == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
-        return ret;
-        */
         return null;
     }
 

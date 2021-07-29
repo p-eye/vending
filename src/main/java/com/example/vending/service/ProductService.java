@@ -1,6 +1,7 @@
 package com.example.vending.service;
 
 import com.example.vending.common.helper.Helper;
+import com.example.vending.common.helper.SerDesHelper;
 import com.example.vending.common.helper.UrlHelper;
 import com.example.vending.dto.MailLog;
 import com.example.vending.dto.ProductForm;
@@ -21,15 +22,20 @@ import java.util.List;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private SerDesHelper serDesHelper;
     private Helper fileHelper;
     private UrlHelper urlHelper;
 
-    public MailLog saveToDb(ProductForm form) {
+    public String saveToDb(ProductForm form) {
         MailLog mailLog = productRepository.saveToAll(form.toEntity());
         if (mailLog == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
-        return mailLog;
+        String mailJson = serDesHelper.serialize(mailLog);
+        if (mailJson == null) {
+            throw new ApiRequestException("json 변환에서 에러가 생겼습니다");
+        }
+        return mailJson;
     }
 
     public List<Product> saveToDb(MultipartFile file) {

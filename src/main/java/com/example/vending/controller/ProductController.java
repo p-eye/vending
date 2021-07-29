@@ -1,5 +1,6 @@
 package com.example.vending.controller;
 
+import com.example.vending.dto.MailLog;
 import com.example.vending.dto.ProductForm;
 import com.example.vending.service.ProductService;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,8 @@ public class ProductController {
 
     @PostMapping("/product/save/form")
     public String saveToDb(ProductForm form) {
-        productService.saveToDb(form);
+        MailLog mailLog = productService.saveToDb(form);
+        System.out.println(mailLog.toString());
         return "redirect:/product/new";
     }
 

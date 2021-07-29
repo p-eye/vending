@@ -1,5 +1,6 @@
 package com.example.vending.common.helper;
 
+import com.example.vending.dto.MailLog;
 import com.example.vending.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -26,10 +27,10 @@ public class Helper {
     /*
     ** write
      */
-    public boolean writeAll(Object object) {
+    public MailLog writeAll(Object object) {
         String fileName = txtHelper.writeText(object);
         if (fileName == null)
-            return false;
+            return null;
         return mailHelper.sendMail(fileName);
     }
 

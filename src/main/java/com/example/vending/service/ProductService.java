@@ -2,6 +2,7 @@ package com.example.vending.service;
 
 import com.example.vending.common.helper.Helper;
 import com.example.vending.common.helper.UrlHelper;
+import com.example.vending.dto.MailLog;
 import com.example.vending.dto.ProductForm;
 import com.example.vending.entity.Product;
 import com.example.vending.exception.ApiRequestException;
@@ -23,12 +24,12 @@ public class ProductService {
     private Helper fileHelper;
     private UrlHelper urlHelper;
 
-    public Product saveToDb(ProductForm form) {
-        Product ret = productRepository.saveToAll(form.toEntity());
-        if (ret == null) {
+    public MailLog saveToDb(ProductForm form) {
+        MailLog mailLog = productRepository.saveToAll(form.toEntity());
+        if (mailLog == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
-        return null;
+        return mailLog;
     }
 
     public List<Product> saveToDb(MultipartFile file) {
@@ -49,11 +50,11 @@ public class ProductService {
         if (product == null) {
             throw new ApiRequestException("url이 올바르지 않습니다");
         }
-        Product ret = productRepository.saveToAll(product);
+        MailLog ret = productRepository.saveToAll(product);
         if (ret == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
-        return ret;
+        return null;
     }
 
 }

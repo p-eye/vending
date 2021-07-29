@@ -1,9 +1,11 @@
 package com.example.vending.common.helper;
 
 import com.example.vending.entity.Product;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 
+@Component
 public class UrlHelper {
     private final String host = "product.com";
     private final String path = "/create";

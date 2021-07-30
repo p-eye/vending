@@ -28,6 +28,28 @@ public class ProductService {
 
     public String saveToDb(ProductForm form) {
         MailLog mailLog = productRepository.saveToAll(form.toEntity());
+        return serializeMailLog(mailLog);
+    }
+
+    public String saveToDb(MultipartFile file) {
+        List<Product> products = fileHelper.fileToProducts(file);
+        if (products == null) {
+            throw new ApiRequestException("파일이 올바르지 않습니다");
+        }
+        MailLog mailLog = productRepository.saveToAll(products);
+        return serializeMailLog(mailLog);
+    }
+
+    public String saveToDb(URL url) {
+        Product product = urlHelper.urlToProduct(url);
+        if (product == null) {
+            throw new ApiRequestException("url이 올바르지 않습니다");
+        }
+        MailLog mailLog = productRepository.saveToAll(product);
+        return serializeMailLog(mailLog);
+    }
+
+    private String serializeMailLog(MailLog mailLog) {
         if (mailLog == null) {
             throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
         }
@@ -37,30 +59,4 @@ public class ProductService {
         }
         return mailJson;
     }
-
-    public List<Product> saveToDb(MultipartFile file) {
-
-        List<Product> products = fileHelper.fileToProducts(file);
-        if (products == null) {
-            throw new ApiRequestException("파일이 올바르지 않습니다");
-        }
-        List<Product> ret = productRepository.saveToAll(products);
-        if (ret == null) {
-            throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
-        }
-        return null;
-    }
-
-    public Product saveToDb(URL url) {
-        Product product = urlHelper.urlToProduct(url);
-        if (product == null) {
-            throw new ApiRequestException("url이 올바르지 않습니다");
-        }
-        MailLog ret = productRepository.saveToAll(product);
-        if (ret == null) {
-            throw new ApiRequestException("파일 쓰기에서 에러가 생겼습니다");
-        }
-        return null;
-    }
-
 }

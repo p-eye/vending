@@ -27,15 +27,11 @@ public class ProductRepository {
         return helper.writeAll(ret);
     }
 
-    public List<Product> saveToAll(List<Product> products) {
+    public MailLog saveToAll(List<Product> products) {
         List<Product> ret = save(products);
         if (ret == null)
             return null;
-        /*
-        boolean isWritten = helper.writeAll(ret);
-        return isWritten ? ret : null;
-         */
-        return null;
+        return helper.writeAll(ret);
     }
 
     private Product save(Product product){

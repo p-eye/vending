@@ -34,6 +34,10 @@ public class Helper {
         return mailHelper.sendMail(fileName);
     }
 
+    public void writeExcel(MailLog mailLog) {
+        excelHelper.writeExcel(mailLog);
+    }
+
     /*
     ** read
      */
@@ -65,7 +69,6 @@ public class Helper {
 
         if (!isValidHeader(table.get(0)) || !isValidData(table))
             return null;
-
         List<Product> products = new ArrayList<>();
         table.stream().skip(1).forEach(str -> {
             Product product= new Product(null, str[0], str[1], str[2]);

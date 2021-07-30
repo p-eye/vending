@@ -1,5 +1,6 @@
 package com.example.vending.common.helper;
 
+import com.example.vending.dto.MailLog;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -19,4 +20,14 @@ public class SerDesHelper {
         }
     }
 
+    public MailLog deserialize(String mailJson) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(mailJson, MailLog.class);
+
+        } catch (JsonProcessingException e) {
+            log.error(e.getMessage());
+            return null;
+        }
+    }
 }

@@ -13,9 +13,9 @@ public class MailLog {
     private String senderMail;
     private List<String> receiverMail;
     private String title;
+    private String content;
     private String attachName;
     private String attachPath;
-    private String content;
     private boolean status;
     private Date sendDate;
 
@@ -29,9 +29,9 @@ public class MailLog {
                 "senderMail='" + senderMail + '\'' +
                 ", receiverMail=" + receiverMail +
                 ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
                 ", attachName='" + attachName + '\'' +
                 ", attachPath='" + attachPath + '\'' +
-                ", content='" + content + '\'' +
                 ", status=" + status +
                 ", sendDate=" + sendDate +
                 '}';

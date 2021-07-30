@@ -20,7 +20,8 @@ public class LogController {
 
     @GetMapping("/test")
     public Mono<TestApi> TestWebClient(@RequestParam("mailLog") String mailJson, Model model){
-        System.out.println(mailJson);
+        logService.saveLog(mailJson);
+
         return null;
         //return logService.test();
     }

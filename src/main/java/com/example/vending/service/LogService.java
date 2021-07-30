@@ -1,22 +1,26 @@
 package com.example.vending.service;
 
-import com.example.vending.dto.TestApi;
+import com.example.vending.common.helper.SerDesHelper;
+import com.example.vending.dto.MailLog;
+import com.example.vending.exception.ApiRequestException;
+import com.example.vending.repository.MailLogRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 @Service
+@AllArgsConstructor
 public class LogService {
 
-    private final WebClient webClient;
+    private final MailLogRepository mailLogRepository;
+    private final SerDesHelper serDesHelper;
 
-    public LogService(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("https://jsonplaceholder.typicode.com").build();
-    }
-
-    public Mono<TestApi> test() {
-        return this.webClient.get().uri("/todos/1")
-                .retrieve().bodyToMono(TestApi.class);
+    public void saveLog(String mailJson) {
+        MailLog mailLog = serDesHelper.deserialize(mailJson);
+        if (mailLog == null) {
+            throw new ApiRequestException("json 변환에서 에러가 생겼습니다");
+        }
+        mailLogRepository.saveToAll(mailLog);
+        System.out.println(mailLog.toString());
     }
 
     /*

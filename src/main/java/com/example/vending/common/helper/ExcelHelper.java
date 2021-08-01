@@ -18,7 +18,6 @@ public class ExcelHelper {
     private final String LogfilePath = "/Users/p-eye/project/spring/vending_log/MailLog.xlsx";
     private Workbook workbook;
 
-
     /*
     ** common
      */

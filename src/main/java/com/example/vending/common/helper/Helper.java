@@ -17,17 +17,31 @@ public class Helper {
     private TextHelper txtHelper;
     private MailHelper mailHelper;
     private ExcelHelper excelHelper;
+    private SerDesHelper serDesHelper;
 
-    public Helper(JavaMailSender mailSender, TextHelper txtHelper, ExcelHelper excelHelper) {
+    public Helper(JavaMailSender mailSender, TextHelper txtHelper, ExcelHelper excelHelper, SerDesHelper serDesHelper) {
         this.txtHelper = txtHelper;
         this.mailHelper = new MailHelper(mailSender);
         this.excelHelper = excelHelper;
+        this.serDesHelper = serDesHelper;
+    }
+
+    /*
+    ** transform
+     */
+
+    public String serialize(Object object){
+        return serDesHelper.serialize(object);
+    }
+
+    public MailLog deserialize(String mailJson) {
+        return serDesHelper.deserialize(mailJson);
     }
 
     /*
     ** write
      */
-    public MailLog writeAll(Object object) {
+    public MailLog writeTextAndMail(Object object) {
         String fileName = txtHelper.writeText(object);
         if (fileName == null)
             return null;

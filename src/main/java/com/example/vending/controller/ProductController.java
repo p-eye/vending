@@ -34,7 +34,7 @@ public class ProductController {
     public String saveToDb(RedirectAttributes redirectAttributes, ProductForm form) {
         String mailJson = productService.saveToDb(form);
         redirectAttributes.addAttribute("mailLog", mailJson);
-        return "redirect:/test";
+        return "redirect:/maillog/save";
     }
 
     @PostMapping("/product/save/file")

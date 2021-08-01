@@ -24,14 +24,14 @@ public class ProductRepository {
         Product ret = save(product);
         if (ret == null)
             return null;
-        return helper.writeAll(ret);
+        return helper.writeTextAndMail(ret);
     }
 
     public MailLog saveToAll(List<Product> products) {
         List<Product> ret = save(products);
         if (ret == null)
             return null;
-        return helper.writeAll(ret);
+        return helper.writeTextAndMail(ret);
     }
 
     private Product save(Product product){
